@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 1000
+ 
+@layer base {
+  :root {
+    --dark: 359 31% 6%;
+    --dark-2: 359 17% 9%;
+    --dark-3: 359 19% 14%;
+    --lead: 359 30% 81%;
+    --primary: 358 84% 53%;
+    --secondary: 0 100% 65%;
+    --white: 359 100% 99%;
+
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+ 
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+ 
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+ 
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+ 
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+ 
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+ 
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --ring: 0 0% 83.1%;
+  }
+}
+ 
+@layer base {
+  body {
+    @apply bg-dark text-lead;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;
+  }
+}
+
+.content-grid {
+    --padding-inline: 1rem;
+    --content-max-width: 1000px;
+    --breakout-max-width: 1400px;
+    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+
+    display: grid;
+    align-items: flex-start;
+    align-content: start;
+    grid-template-columns:
+        [full-width-start] minmax(var(--padding-inline), 1fr) [breakout-start] minmax(0, var(--breakout-size)) [content-start] min(100% - (var(--padding-inline) * 2),
+            var(--content-max-width)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+.content-grid > :not(.breakout, .full-width) {
+    grid-column: content;
+}
+
+.content-grid > .breakout {
+    grid-column: breakout;
+}
+
+.content-grid > .full-width {
+    grid-column: full-width;
+}
+
+.pre-title{
+    @apply text-secondary font-semibold;
+}
+
+.h1{
+    @apply text-white font-extrabold;
+    font-size: 2.9rem;
+    @media (min-width: 640) {
+        font-size: 4rem;
+    }
+}
+
+.h2{
+    @apply text-white font-extrabold;
+    font-size: 2.5rem;
+}
+
+.h3{
+    @apply text-white font-extrabold;
+    font-size: 2.25rem;
+}
