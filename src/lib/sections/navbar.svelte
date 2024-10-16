@@ -28,18 +28,36 @@
 	<div class="hidden sm:block">
 		<Button>Get in touch</Button>
 	</div>
-    <div class="md:hidden">
-        <button title="Menu button" class="hamburger-btn grid grid-flow-col sm:hidden z-50" aria-expanded={nav_expanded} on:click={toggleNav}>
+    <div class="md:hidden z-10">
+        <button title="Menu button" class="hamburger-btn" aria-expanded={nav_expanded} on:click={toggleNav}>
             <svg class="hamburger w-10" fill="none" viewbox="-10 -10 120 120">
                 <path class="line" d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"></path>
             </svg>
         </button>
     </div>
+    <div class="sm-menu" class:collapse={!nav_expanded}>
+    
+        <ul class="grid my-auto gap-4">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/services/">Services</a>
+            </li>
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            <li>
+                <a href="/about/">Get in touch</a>
+            </li>
+        </ul>
+    </div>
 </nav>
+
 
 <style lang="scss">
     .hamburger-btn{
-        z-index: 2000;
+        z-index: 2;
         
         svg{
             @apply stroke-primary stroke-[10];
@@ -58,6 +76,26 @@
         &[aria-expanded="true"] .line{
             stroke-dasharray: 60 105 60 300;
             stroke-dashoffset: -90;
+        }
+    }
+
+    .sm-menu{
+        @apply bg-dark-3;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 2rem;
+        display: grid;
+        z-index: 0;
+        width: fit-content;
+        min-width: 15rem;
+        box-shadow: -1rem 0 1rem rgba(14, 1, 1, 0.6);
+        transform: translateX(0);
+        transition: all 300ms ease-in-out;
+
+        &.collapse{
+            transform: translateX(100%);
         }
     }
 </style>
