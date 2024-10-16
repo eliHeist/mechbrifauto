@@ -223,7 +223,7 @@
 
 <section class="full-width content-grid py-24">
 	<h2 class="h2">Client Feedback</h2>
-	<div class="full-width">
+	<div class="full-width mt-8">
 		<HomeCarousel />
 	</div>
 </section>

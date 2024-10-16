@@ -1,5 +1,6 @@
 <script>
-  import Navbar from "$lib/sections/navbar.svelte";
+  import Footer from "$lib/sections/footer.svelte";
+import Navbar from "$lib/sections/navbar.svelte";
 import "../app.scss";
 </script>
 
@@ -8,4 +9,5 @@ import "../app.scss";
     <div class="full-width content-grid">
         <slot />
     </div>
+    <Footer/>
 </div>
