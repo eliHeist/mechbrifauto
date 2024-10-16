@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte';
+	import HomeCarousel from '$lib/sections/homeCarousel.svelte';
 </script>
 
 <section class="pt-8 pb-24 grid gap-[0.625rem]">
@@ -32,10 +33,7 @@
 
 			<div class="grid gap-8">
 				<div class="flex items-start gap-6">
-					<svg class="w-[8rem]"
-						viewBox="0 0 64 64"
-						fill="none"
-					>
+					<svg class="w-[8rem]" viewBox="0 0 64 64" fill="none">
 						<path
 							fill-rule="evenodd"
 							clip-rule="evenodd"
@@ -58,28 +56,218 @@
 							fill="#666666"
 						/>
 					</svg>
-                    <div>
-                        <h3 class="font-bold text-white mb-3">On-Site Services</h3>
-                        <p>
-                            Get your vehicle serviced at your location for maximum convenience.
-                        </p>
-                    </div>
+					<div>
+						<h3 class="font-bold text-white mb-3">On-Site Services</h3>
+						<p>Get your vehicle serviced at your location for maximum convenience.</p>
+					</div>
 				</div>
 				<div class="flex items-start gap-6">
 					<svg class="w-[8rem]" viewBox="0 0 64 64" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M26.6855 10.0587L10.6855 24.28C9.84115 25.0305 9.16532 25.9513 8.70248 26.9818C8.23964 28.0122 8.00028 29.1291 8.00016 30.2587V56.6667H5.3335C4.80306 56.6667 4.29436 56.8774 3.91928 57.2525C3.54421 57.6276 3.3335 58.1363 3.3335 58.6667C3.3335 59.1972 3.54421 59.7059 3.91928 60.0809C4.29436 60.456 4.80306 60.6667 5.3335 60.6667H58.6668C59.1973 60.6667 59.706 60.456 60.081 60.0809C60.4561 59.7059 60.6668 59.1972 60.6668 58.6667C60.6668 58.1363 60.4561 57.6276 60.081 57.2525C59.706 56.8774 59.1973 56.6667 58.6668 56.6667H56.0002V30.2587C56 29.1291 55.7607 28.0122 55.2978 26.9818C54.835 25.9513 54.1592 25.0305 53.3148 24.28L37.3148 10.0587C35.8505 8.75715 33.9594 8.03821 32.0002 8.03821C30.041 8.03821 28.1499 8.75715 26.6855 10.0587ZM26.6668 22C26.1364 22 25.6277 22.2108 25.2526 22.5858C24.8775 22.9609 24.6668 23.4696 24.6668 24C24.6668 24.5305 24.8775 25.0392 25.2526 25.4143C25.6277 25.7893 26.1364 26 26.6668 26H37.3335C37.8639 26 38.3726 25.7893 38.7477 25.4143C39.1228 25.0392 39.3335 24.5305 39.3335 24C39.3335 23.4696 39.1228 22.9609 38.7477 22.5858C38.3726 22.2108 37.8639 22 37.3335 22H26.6668ZM37.4722 30.0001C39.8695 30.0001 41.8668 30.0001 43.4508 30.2134C45.1255 30.4374 46.6375 30.9334 47.8508 32.1494C49.0668 33.3627 49.5628 34.8747 49.7868 36.5494C50.0002 38.1334 50.0002 40.1334 50.0002 42.5281V56.6667H14.0002V42.5281C14.0002 40.1334 14.0002 38.1334 14.2135 36.5494C14.4375 34.8747 14.9335 33.3627 16.1468 32.1494C17.3628 30.9334 18.8748 30.4374 20.5468 30.2134C22.1335 30.0001 24.1335 30.0001 26.5282 30.0001H37.4722Z" fill="#666666"/>
-                        <path opacity="0.5" d="M37.472 30H26.528C24.1333 30 22.1333 30 20.5493 30.2133C18.8747 30.4373 17.3627 30.9333 16.1493 32.1493C14.9333 33.3627 14.4373 34.8747 14.2133 36.5493C14 38.1333 14 40.1333 14 42.528V56.6667H50V42.528C50 40.1333 50 38.1333 49.7867 36.5493C49.5627 34.8747 49.0667 33.3627 47.8507 32.1493C46.6373 30.9333 45.1253 30.4373 43.4507 30.2133C41.8667 30 39.8667 30 37.472 30Z" fill="#666666"/>
-                        <path d="M24 39.3334C23.4696 39.3334 22.9609 39.5441 22.5858 39.9192C22.2107 40.2942 22 40.8029 22 41.3334C22 41.8638 22.2107 42.3725 22.5858 42.7476C22.9609 43.1227 23.4696 43.3334 24 43.3334H40C40.5304 43.3334 41.0391 43.1227 41.4142 42.7476C41.7893 42.3725 42 41.8638 42 41.3334C42 40.8029 41.7893 40.2942 41.4142 39.9192C41.0391 39.5441 40.5304 39.3334 40 39.3334H24ZM24 47.3334C23.4696 47.3334 22.9609 47.5441 22.5858 47.9192C22.2107 48.2942 22 48.8029 22 49.3334C22 49.8638 22.2107 50.3725 22.5858 50.7476C22.9609 51.1227 23.4696 51.3334 24 51.3334H40C40.5304 51.3334 41.0391 51.1227 41.4142 50.7476C41.7893 50.3725 42 49.8638 42 49.3334C42 48.8029 41.7893 48.2942 41.4142 47.9192C41.0391 47.5441 40.5304 47.3334 40 47.3334H24Z" fill="#666666"/>
-                    </svg>
-                        
-                    <div>
-                        <h3 class="font-bold text-white mb-3">Garage Services</h3>
-                        <p>
-                            Visit our fully equipped garage for a wide range of services.
-                        </p>
-                    </div>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M26.6855 10.0587L10.6855 24.28C9.84115 25.0305 9.16532 25.9513 8.70248 26.9818C8.23964 28.0122 8.00028 29.1291 8.00016 30.2587V56.6667H5.3335C4.80306 56.6667 4.29436 56.8774 3.91928 57.2525C3.54421 57.6276 3.3335 58.1363 3.3335 58.6667C3.3335 59.1972 3.54421 59.7059 3.91928 60.0809C4.29436 60.456 4.80306 60.6667 5.3335 60.6667H58.6668C59.1973 60.6667 59.706 60.456 60.081 60.0809C60.4561 59.7059 60.6668 59.1972 60.6668 58.6667C60.6668 58.1363 60.4561 57.6276 60.081 57.2525C59.706 56.8774 59.1973 56.6667 58.6668 56.6667H56.0002V30.2587C56 29.1291 55.7607 28.0122 55.2978 26.9818C54.835 25.9513 54.1592 25.0305 53.3148 24.28L37.3148 10.0587C35.8505 8.75715 33.9594 8.03821 32.0002 8.03821C30.041 8.03821 28.1499 8.75715 26.6855 10.0587ZM26.6668 22C26.1364 22 25.6277 22.2108 25.2526 22.5858C24.8775 22.9609 24.6668 23.4696 24.6668 24C24.6668 24.5305 24.8775 25.0392 25.2526 25.4143C25.6277 25.7893 26.1364 26 26.6668 26H37.3335C37.8639 26 38.3726 25.7893 38.7477 25.4143C39.1228 25.0392 39.3335 24.5305 39.3335 24C39.3335 23.4696 39.1228 22.9609 38.7477 22.5858C38.3726 22.2108 37.8639 22 37.3335 22H26.6668ZM37.4722 30.0001C39.8695 30.0001 41.8668 30.0001 43.4508 30.2134C45.1255 30.4374 46.6375 30.9334 47.8508 32.1494C49.0668 33.3627 49.5628 34.8747 49.7868 36.5494C50.0002 38.1334 50.0002 40.1334 50.0002 42.5281V56.6667H14.0002V42.5281C14.0002 40.1334 14.0002 38.1334 14.2135 36.5494C14.4375 34.8747 14.9335 33.3627 16.1468 32.1494C17.3628 30.9334 18.8748 30.4374 20.5468 30.2134C22.1335 30.0001 24.1335 30.0001 26.5282 30.0001H37.4722Z"
+							fill="#666666"
+						/>
+						<path
+							opacity="0.5"
+							d="M37.472 30H26.528C24.1333 30 22.1333 30 20.5493 30.2133C18.8747 30.4373 17.3627 30.9333 16.1493 32.1493C14.9333 33.3627 14.4373 34.8747 14.2133 36.5493C14 38.1333 14 40.1333 14 42.528V56.6667H50V42.528C50 40.1333 50 38.1333 49.7867 36.5493C49.5627 34.8747 49.0667 33.3627 47.8507 32.1493C46.6373 30.9333 45.1253 30.4373 43.4507 30.2133C41.8667 30 39.8667 30 37.472 30Z"
+							fill="#666666"
+						/>
+						<path
+							d="M24 39.3334C23.4696 39.3334 22.9609 39.5441 22.5858 39.9192C22.2107 40.2942 22 40.8029 22 41.3334C22 41.8638 22.2107 42.3725 22.5858 42.7476C22.9609 43.1227 23.4696 43.3334 24 43.3334H40C40.5304 43.3334 41.0391 43.1227 41.4142 42.7476C41.7893 42.3725 42 41.8638 42 41.3334C42 40.8029 41.7893 40.2942 41.4142 39.9192C41.0391 39.5441 40.5304 39.3334 40 39.3334H24ZM24 47.3334C23.4696 47.3334 22.9609 47.5441 22.5858 47.9192C22.2107 48.2942 22 48.8029 22 49.3334C22 49.8638 22.2107 50.3725 22.5858 50.7476C22.9609 51.1227 23.4696 51.3334 24 51.3334H40C40.5304 51.3334 41.0391 51.1227 41.4142 50.7476C41.7893 50.3725 42 49.8638 42 49.3334C42 48.8029 41.7893 48.2942 41.4142 47.9192C41.0391 47.5441 40.5304 47.3334 40 47.3334H24Z"
+							fill="#666666"
+						/>
+					</svg>
+
+					<div>
+						<h3 class="font-bold text-white mb-3">Garage Services</h3>
+						<p>Visit our fully equipped garage for a wide range of services.</p>
+					</div>
 				</div>
+			</div>
+		</div>
+		<div class="hidden md:grid">
+			<svg
+				width="593"
+				height="279"
+				viewBox="0 0 593 279"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M593 117.196L563.428 120.891L507.426 128.282L471.05 201.661L448.021 96.3434L361.924 279L361.662 110.333L300.164 107.166L83.2188 96.6074L13.3464 93.176L0 92.6481H381.812L383.121 201.397L462.676 0L477.069 159.429L503.239 115.612L563.428 116.668L593 117.196Z"
+					fill="#EC2227"
+				/>
+			</svg>
+		</div>
+	</div>
+</section>
+
+<section class="full-width content-grid py-24">
+	<div class="full-to-content">
+		<div class="grid gap-16">
+			<div class="grid gap-4">
+				<figure class="figure aspect-square"></figure>
+				<figure class="figure aspect-square"></figure>
+			</div>
+			<div class="grid pl-4 sm:pl-0">
+				<p class="pre-title mb-2">COMPUTERISED DIAGNOSIS</p>
+				<h2 class="h2">Precision Diagnostics for Your Vehicle</h2>
+				<p class="my-12">
+					Our advanced computerized diagnostic system identifies issues quickly and accurately,
+					ensuring your vehicle receives the precise care it needs. From engine performance to
+					electrical systems, we utilize cutting-edge technology to troubleshoot and resolve
+					problems efficiently.
+				</p>
 			</div>
 		</div>
 	</div>
 </section>
+
+<section class="py-24 full-width content-grid bg-dark-2">
+	<h2 class="h2 mb-16">Driving Excellence in Every Service</h2>
+	<div class="grid gap-12">
+		<div class="service-card">
+			<img src="/images/test.jpg" alt="" />
+			<div class="backdrop">
+				<h3>Computerized Diagnosis</h3>
+			</div>
+		</div>
+		<div class="service-card">
+			<img src="/images/test.jpg" alt="" />
+			<div class="backdrop">
+				<h3>Engine Services</h3>
+			</div>
+		</div>
+		<div class="service-card">
+			<img src="/images/test.jpg" alt="" />
+			<div class="backdrop">
+				<h3>Suspension and Steering</h3>
+			</div>
+		</div>
+		<div class="service-card">
+			<img src="/images/test.jpg" alt="" />
+			<div class="backdrop">
+				<h3>General Service Maintenance</h3>
+			</div>
+		</div>
+		<div class="service-card">
+			<img src="/images/test.jpg" alt="" />
+			<div class="backdrop">
+				<h3>Road Rescue Services</h3>
+			</div>
+		</div>
+		<div class="service-card">
+			<img src="/images/test.jpg" alt="" />
+			<div class="backdrop">
+				<h3>Vehicle Restorations</h3>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="full-width content-grid py-24">
+	<div class="grid gap-8">
+		<div class="grid">
+			<h2 class="h2">Stay Informed with Our Comprehensive Vehicle Reports</h2>
+			<p class="pt-12">
+				At Mechbrif Auto, we believe in keeping you updated on your vehicle's care. Our detailed
+				vehicle reports provide a clear overview of all services performed, including inspections,
+				repairs, and recommendations for future maintenance. Transparency is key to our relationship
+				with you!
+			</p>
+		</div>
+		<figure class="aspect-square figure">
+			<img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
+		</figure>
+	</div>
+</section>
+
+<section class="py-24 full-width content-grid bg-dark-2">
+	<h2 class="h2">How do we Work?</h2>
+	<div class="grid gap-8 mt-8">
+		<div class="grid gap-2">
+			<h3 class="h4">Reception & Check-in</h3>
+			<p>
+				We begin by receiving the vehicle, registering the customer and vehicle details, and
+				performing a thorough pre-operation check to assess its current condition.
+			</p>
+		</div>
+		<div class="grid gap-2">
+			<h3 class="h4">Diagnosis</h3>
+			<p>
+				Our team conducts a detailed diagnosis to identify the root cause of the issues based on the
+				customer's concerns.
+			</p>
+		</div>
+		<div class="grid gap-2">
+			<h3 class="h4">Repair & Service</h3>
+			<p>
+				We then carry out the necessary repairs or services, addressing any issues found or
+				completing the requested maintenance.
+			</p>
+		</div>
+		<div class="grid gap-2">
+			<h3 class="h4">Testing & Delivery</h3>
+			<p>
+				After repairs, we rigorously test the vehicle to ensure everything is in top shape before
+				handing it back to the customer.
+			</p>
+		</div>
+	</div>
+	<figure class="figure aspect-video mt-16R">
+		<img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
+	</figure>
+</section>
+
+<section class="full-width content-grid py-24">
+	<h2 class="h2">Client Feedback</h2>
+	<div class="full-width">
+		<HomeCarousel />
+	</div>
+</section>
+
+<style lang="scss">
+	.service-card {
+		@apply bg-dark-3 aspect-square relative overflow-hidden;
+
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			scale: 1;
+			transition: scale 500ms ease-in-out;
+		}
+
+		.backdrop {
+			position: absolute;
+			inset: 0;
+			padding: 1rem;
+			display: grid;
+			align-content: end;
+			transition: all 500ms ease-in-out;
+
+			background-image: linear-gradient(
+				to top,
+				rgba(0, 0, 0, 0.8) 0%,
+				rgba(0, 0, 0, 0.3) 50%,
+				rgba(0, 0, 0, 0) 100%
+			);
+
+			h3 {
+				@apply text-white font-bold;
+			}
+		}
+
+		&:hover {
+			img {
+				scale: 1.1;
+			}
+
+			.backdrop {
+				opacity: 0.8;
+			}
+		}
+	}
+</style>

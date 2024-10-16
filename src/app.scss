@@ -4,62 +4,98 @@
 
 // <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 200 to 1000
- 
-@layer base {
-  :root {
-    --dark: 359 31% 6%;
-    --dark-2: 359 17% 9%;
-    --dark-3: 359 19% 14%;
-    --lead: 359 30% 81%;
-    --primary: 358 84% 53%;
-    --secondary: 0 100% 65%;
-    --white: 359 100% 99%;
 
-    --radius: 0.5rem;
-  }
- 
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
- 
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
- 
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
- 
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
- 
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
- 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
- 
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
- 
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
- 
-    --ring: 0 0% 83.1%;
-  }
-}
- 
 @layer base {
-  body {
-    @apply bg-dark text-lead;
-    font-family: "Nunito Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100,
-      "YTLC" 500;
-  }
+    :root {
+        --dark: 359 31% 6%;
+        --dark-2: 359 17% 9%;
+        --dark-3: 359 19% 14%;
+        --lead: 359 30% 81%;
+        --primary: 358 84% 53%;
+        --secondary: 0 100% 65%;
+        --white: 359 100% 99%;
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 0 0% 3.9%;
+        --foreground: 0 0% 98%;
+
+        --muted: 0 0% 14.9%;
+        --muted-foreground: 0 0% 63.9%;
+
+        --popover: 0 0% 3.9%;
+        --popover-foreground: 0 0% 98%;
+
+        --card: 0 0% 3.9%;
+        --card-foreground: 0 0% 98%;
+
+        --border: 0 0% 14.9%;
+        --input: 0 0% 14.9%;
+
+        --primary: 0 0% 98%;
+        --primary-foreground: 0 0% 9%;
+
+        --secondary: 0 0% 14.9%;
+        --secondary-foreground: 0 0% 98%;
+
+        --accent: 0 0% 14.9%;
+        --accent-foreground: 0 0% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+
+        --ring: 0 0% 83.1%;
+    }
+}
+
+@layer base {
+    body {
+        @apply bg-dark text-lead;
+        font-family: "Nunito Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100,
+            "YTLC" 500;
+    }
+}
+
+/* Apply to the whole document */
+::-webkit-scrollbar {
+    width: .4rem;
+    /* Width of the scrollbar */
+    position: relative;
+    
+    @media (max-width: 767px) {
+        display: none;
+        width: 0;
+    }
+}
+
+.custom-scroller::-webkit-scrollbar {
+    @media (max-width: 640px) {
+        display: initial;
+        width: .4rem;
+    }
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-dark-3;
+    width: 1rem;
+    /* Width of the scrollbar */
+    position: absolute;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-lead;
 }
 
 .content-grid {
@@ -80,32 +116,80 @@
     grid-column: content;
 }
 
-.content-grid > .breakout {
-    grid-column: breakout;
-}
-
+/* Spans from full-width-start to full-width-end (full grid) */
 .content-grid > .full-width {
-    grid-column: full-width;
+    grid-column: full-width-start / full-width-end;
 }
 
-.pre-title{
-    @apply text-secondary font-semibold;
+/* Spans from full-width-start to content-end */
+.content-grid > .full-to-content {
+    grid-column: full-width-start / content-end;
 }
 
-.h1{
+/* Spans from full-width-start to breakout-end */
+.content-grid > .full-to-breakout {
+    grid-column: full-width-start / breakout-end;
+}
+
+/* Spans from breakout-start to content-end */
+.content-grid > .breakout-to-content {
+    grid-column: breakout-start / content-end;
+}
+
+/* Spans from breakout-start to breakout-end (breakout content) */
+.content-grid > .breakout {
+    grid-column: breakout-start / breakout-end;
+}
+
+/* Spans from content-start to content-end (normal content) */
+.content-grid > .content {
+    grid-column: content-start / content-end;
+}
+
+/* Spans from breakout-start to full-width-end */
+.content-grid > .breakout-to-full {
+    grid-column: breakout-start / full-width-end;
+}
+
+/* Spans from content-start to breakout-end */
+.content-grid > .content-to-breakout {
+    grid-column: content-start / breakout-end;
+}
+
+/* Spans from full-width-start to breakout-start */
+.content-grid > .full-to-breakout-start {
+    grid-column: full-width-start / breakout-start;
+}
+
+
+.pre-title {
+    @apply text-secondary font-semibold uppercase;
+}
+
+.h1 {
     @apply text-white font-extrabold;
     font-size: 2.9rem;
+
     @media (min-width: 640) {
         font-size: 4rem;
     }
 }
 
-.h2{
+.h2 {
     @apply text-white font-extrabold;
     font-size: 2.5rem;
 }
 
-.h3{
+.h3 {
     @apply text-white font-extrabold;
     font-size: 2.25rem;
+}
+
+.h4 {
+    @apply text-white font-extrabold;
+    font-size: 1.5rem;
+}
+
+.figure {
+    @apply bg-dark-3;
 }
