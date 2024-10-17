@@ -2,17 +2,17 @@
     import { contactFormBoolean } from '$lib/stores/booleanStore';
 
     // Subscribe to the store to use its value
-    let isContactFormBoolean = true;
+    let get_in_touch = false;
     contactFormBoolean.subscribe(value => {
-        isContactFormBoolean = value;
+        get_in_touch = value;
     });
 
     function toggleContactFormBoolean() {
-        contactFormBoolean.update(value => !value);
+        contactFormBoolean.update((value) => !value);
     }
 </script>
 
-<aside class:collapsed={isContactFormBoolean}>
+<aside class:collapsed={get_in_touch}>
     <div class="p-8 bg-dark-3 absolute right-0 top-0 bottom-0 content">
         <div class="flex space-x-8 justify-between mb-[2.75rem]">
             <h2>Hey there!</h2>
@@ -56,13 +56,13 @@
         position: fixed;
         inset: 0;
         background-color: rgba(0,0,0,.6);
-        pointer-events: none;
         z-index: 10;
+        transition: all 300ms ease-in-out;
 
         &.collapsed{
-            pointer-events: auto;
-            background-color: rgba(0,0,0,0);
-            
+            background-color: rgba(0,0,0,0.0);
+            visibility: hidden;
+
             .content{
                 transform: translateX(100%);
             }

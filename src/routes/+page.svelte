@@ -1,6 +1,12 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte';
 	import HomeCarousel from '$lib/sections/homeCarousel.svelte';
+
+    import { contactFormBoolean } from '$lib/stores/booleanStore';
+
+	function toggleContactFormBoolean() {
+		contactFormBoolean.update((value) => !value);
+	}
 </script>
 
 <section class="pt-8 pb-24 grid gap-[0.625rem]">
@@ -14,7 +20,7 @@
 			Get your vehicle repairs and services done at the most convenient location. Timely, reliable,
 			and hassle-free auto care right here.
 		</p>
-		<Button variant="dark">Book a Mechanic</Button>
+		<Button variant="dark" on:click={toggleContactFormBoolean}>Book a Mechanic</Button>
 	</div>
 	<div class="bg-dark-3 px-8 py-16 rounded-tl-[13.75rem] sm:rounded-bl-[13.75rem]"></div>
 	<div class="bg-dark-3 px-8 py-16 rounded-bl-[13.75rem] sm:rounded-br-[13.75rem]"></div>
@@ -216,7 +222,7 @@
 			</p>
 		</div>
 	</div>
-	<figure class="figure aspect-video mt-16R">
+	<figure class="figure aspect-video mt-16">
 		<img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
 	</figure>
 </section>
