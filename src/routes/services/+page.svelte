@@ -92,24 +92,28 @@
 	];
 </script>
 
-<section class="pt-8 pb-24 grid gap-[0.625rem] breakout">
-	<div class="bg-dark-3 px-8 py-16 rounded-tl-[13.75rem] rounded-br-[13.75rem] hidden"></div>
-	<div class="bg-dark-3 px-8 py-16 rounded-br-[13.75rem] sm:rounded-bl-[13.75rem]">
+<section class="pt-8 pb-24 breakout grid gap-[0.625rem] md:grid-cols-3 lg:grid-cols-5">
+	<div class="bg-dark-3 rounded-tl-[13.75rem] rounded-br-[13.75rem] md:rounded-br-[0] lg:rounded-br-[13.75rem] overflow-hidden hidden md:grid lg:col-span-1">
+        <img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
+    </div>
+	<div class="bg-dark-3 px-8 py-16 rounded-br-[13.75rem] sm:rounded-bl-[13.75rem] sm:text-center md:col-span-2 md:rounded-bl-[0] md:text-left lg:min-h-[70vh] grid content-center lg:col-span-3 lg:rounded-bl-[13.75rem] lg:text-center">
 		<h1 class="h1">Expert Auto Services to Keep You Moving</h1>
-		<p class="mt-8">
+		<p class="mt-8 max-w-[90%] sm:max-w-[26.5rem] sm:mx-auto md:mx-0 lg:mx-auto">
 			At Mechbrif Auto, we pride ourselves on offering top-tier automotive services tailored to your
 			needs. From routine maintenance to on-site repairs, our skilled technicians are dedicated to
 			ensuring your vehicle performs at its best, whether you're visiting our garage or getting
 			service right at your doorstep.
 		</p>
 	</div>
-	<div class="bg-dark-3 px-8 py-16 rounded-tr-[13.75rem] rounded-bl-[13.75rem] hidden"></div>
+	<div class="bg-dark-3 rounded-tr-[13.75rem] rounded-bl-[13.75rem] overflow-hidden hidden lg:grid lg:col-span-1">
+        <img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
+    </div>
 </section>
 
 <div class="py-24 full-width content-grid bg-dark-2">
 	<section class="pb-24">
-		<h2 class="h2">Service Packages <br />For your Vehicle</h2>
-		<div class="grid gap-8">
+		<h2 class="h2 mb-[3.375rem]">Service Packages <br />For your Vehicle</h2>
+		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 			{#each servicePackages as pkg}
 				<Card.Root>
 					<Card.Header>
@@ -131,8 +135,8 @@
 		</div>
 	</section>
 	<section class="pt-24">
-		<div class="grid gap-8">
-			<div class="sm:grid place-content-center hidden sm:order-2">
+		<div class="grid md:grid-cols-5 gap-8">
+			<div class="sm:grid place-content-center hidden sm:order-2 md:col-span-2">
 				<svg class="max-w-[28rem] w-full" viewBox="0 0 364 349" fill="none">
 					<path
 						d="M168.58 20L175.18 5.9H178.08L184.68 20H181L179.34 16.12L180.74 17.14H172.5L173.92 16.12L172.26 20H168.58ZM176.6 9.74L174.28 15.28L173.72 14.32H179.54L178.98 15.28L176.64 9.74H176.6ZM186.054 20V17.02H189.194V8.96H190.874L186.814 11.28L185.474 8.62L190.274 5.9H192.854V17.02H195.794V20H186.054Z"
@@ -306,7 +310,7 @@
 					</defs>
 				</svg>
 			</div>
-			<div class="sm:order-1">
+			<div class="sm:order-1 md:col-span-3">
 				<h2 class="h2">Schedule Your Service Today!</h2>
 				<p class="pt-[3.5rem] pb-8">
 					Choose the right service package to keep your vehicle in peak condition. Start with our
@@ -344,7 +348,7 @@
 </section>
 
 <section class="py-24 grid text-center justify-center justify-items-center">
-    <h2 class="h1 max-w-[44rem]">Ready to Give Your Car the Care It Deserves?</h2>
+    <h2 class="h1 max-w-[44rem]">Ready to Give Your Car <br class="hidden md:inline" />the Care It Deserves?</h2>
     <p class="text-2xl mt-7 mb-14 max-w-[36.5rem]">
         Whether it's routine maintenance or a full-service check, our skilled technicians are here to help you stay on the road with confidence.
     </p>

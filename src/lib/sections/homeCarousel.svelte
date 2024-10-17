@@ -91,7 +91,7 @@
 <div class="carousel-container" bind:this={carouselContainer} on:touchstart={handleTouchStart} on:touchmove={handleTouchMove}>
 	<div class="carousel">
 		{#each items as { text, author }, i}
-            <div class="slide">
+            <div class="slide w-[18rem] sm:w-full">
                 <Card.Root>
                     <Card.Header>
                         <Card.Title>{author}</Card.Title>
@@ -101,6 +101,16 @@
             </div>
 		{/each}
 	</div>
+</div>
+<div class="control content-grid">
+    <div class="space-x-8 mx-auto">
+        <button on:click={previousSlide} type="button" class="text-3xl aspect aspect-square w-12 sm:w-16 rounded-full border-2 border-dark-3 rotate-180 transition-all hover:bg-dark-3">
+            &#10141;
+        </button>
+        <button on:click={nextSlide} type="button" class="text-3xl aspect aspect-square w-12 sm:w-16 rounded-full border-2 border-dark-3 transition-all hover:bg-dark-3">
+            &#10141;
+        </button>
+    </div>
 </div>
 
 <style lang="scss">
@@ -121,7 +131,6 @@
             gap: 1.5rem;
 
             .slide {
-                width: 18rem;
                 opacity: 0.5;
                 transition: opacity 0.5s ease-in-out;
                 @media (min-width: 640px){

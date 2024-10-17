@@ -26,9 +26,9 @@
         </svg>
     </div>
 	<div class="space-x-6 hidden md:flex">
-		<a on:click={toggleNav} href="/" class="hover:text-accent">Home</a>
-		<a on:click={toggleNav} href="/services/" class="hover:text-accent">Services</a>
-		<a on:click={toggleNav} href="/about/" class="hover:text-accent">About Us</a>
+		<a href="/" class="hover:text-accent">Home</a>
+		<a href="/services/" class="hover:text-accent">Services</a>
+		<a href="/about/" class="hover:text-accent">About Us</a>
 	</div>
 	<div class="hidden sm:block">
 		<Button on:click={toggleContactFormBoolean}>Get in touch</Button>

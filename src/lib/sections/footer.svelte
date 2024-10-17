@@ -7,8 +7,8 @@
 </script>
 
 <footer class="py-24 full-width content-grid">
-	<div class="grid space-y-16">
-		<div class="grid">
+	<div class="grid sm:grid-cols-2 lg:grid-cols-12 gap-16 breakout">
+		<div class="grid lg:col-span-3">
 			<svg class="w-[15rem]" viewBox="0 0 240 84" fill="none">
 				<path d="M234.427 68.2124H4.10986V69.6476H234.427V68.2124Z" fill="#EC2227" />
 				<path
@@ -210,14 +210,14 @@
 				</a>
 			</div>
 		</div>
-		<div class="grid">
+		<div class="grid lg:col-span-4">
 			<p>
 				At Mechbrif Auto, we’re committed to providing reliable, convenient, and transparent auto
 				care. Whether it’s at our garage or at your location, you can trust us to keep your vehicle
 				running smoothly. Your satisfaction drives us.
 			</p>
 		</div>
-		<div class="grid gap-2">
+		<div class="grid gap-2 sm:col-span-2 lg:col-span-5">
 			<h3 class="font-bold text-lg text-white uppercase">Links</h3>
 			<div class="grid grid-cols-2 gap-2 links">
 				<a href="/">Home</a>
@@ -225,8 +225,8 @@
 				<a href="/services/">Services</a>
 				<!-- <a href="/">Careers</a> -->
 				<button class="grid justify-start" on:click={toggleContactFormBoolean}>Get in Touch</button>
-				<a href="/">Privacy Policy</a>
-				<a href="/" class="col-span-2">Terms and Conditions</a>
+				<a href="/about/privacypolicy/">Privacy Policy</a>
+				<a href="/about/tandcs/" class="col-span-2 sm:col-span-1">Terms and Conditions</a>
 			</div>
 		</div>
 	</div>

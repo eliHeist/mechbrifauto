@@ -9,9 +9,9 @@
 	}
 </script>
 
-<section class="pt-8 pb-24 grid gap-[0.625rem]">
-	<div class="bg-dark-3 px-8 py-16 rounded-tr-[13.75rem]">
-		<p class="pre-title grid sm:flex mb-2">
+<section class="pt-8 pb-24 grid gap-[0.625rem] grid-cols-2 sm:grid-cols-3">
+	<div class="bg-dark-3 px-8 py-16 rounded-tr-[13.75rem] col-span-2 sm:row-span-2 md:col-span-2 lg:col-span-1 lg:row-span-1">
+		<p class="pre-title grid sm:flex flex-wrap space-x-1 mb-2">
 			<span>Expert Care, </span>
 			<span>Wherever You Are</span>
 		</p>
@@ -22,12 +22,16 @@
 		</p>
 		<Button variant="dark" on:click={toggleContactFormBoolean}>Book a Mechanic</Button>
 	</div>
-	<div class="bg-dark-3 px-8 py-16 rounded-tl-[13.75rem] sm:rounded-bl-[13.75rem]"></div>
-	<div class="bg-dark-3 px-8 py-16 rounded-bl-[13.75rem] sm:rounded-br-[13.75rem]"></div>
+	<div class="bg-dark-3 overflow-hidden rounded-bl-[13.75rem] sm:rounded-tl-[13.75rem] md:col-span-1 md:rounded-tl-[0] lg:col-span-1">
+        <img src="/images/test.jpg" alt="" class="w-full h-full object-cover">
+    </div>
+	<div class="bg-dark-3 overflow-hidden rounded-br-[13.75rem] sm:rounded-tr-[13.75rem] md:col-span-1 md:rounded-tr-[0] lg:col-span-1">
+        <img src="/images/test.jpg" alt="" class="w-full h-full object-cover">
+    </div>
 </section>
 
 <section class="py-24 full-width content-grid bg-dark-2">
-	<div class="grid">
+	<div class="grid md:grid-cols-2">
 		<div>
 			<p class="pre-title mb-2">Expert Care, Wherever You Are</p>
 			<h2 class="h1">Restoring Brilliance,<br />Inside and out.</h2>
@@ -37,7 +41,7 @@
 				Experience expert detailing that enhances your car’s appearance and longevity.
 			</p>
 
-			<div class="grid gap-8">
+			<div class="grid sm:grid-cols-2 gap-8">
 				<div class="flex items-start gap-6">
 					<svg class="w-[8rem]" viewBox="0 0 64 64" fill="none">
 						<path
@@ -93,32 +97,27 @@
 				</div>
 			</div>
 		</div>
-		<div class="hidden md:grid">
-			<svg
-				width="593"
-				height="279"
-				viewBox="0 0 593 279"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path
-					d="M593 117.196L563.428 120.891L507.426 128.282L471.05 201.661L448.021 96.3434L361.924 279L361.662 110.333L300.164 107.166L83.2188 96.6074L13.3464 93.176L0 92.6481H381.812L383.121 201.397L462.676 0L477.069 159.429L503.239 115.612L563.428 116.668L593 117.196Z"
-					fill="#EC2227"
-				/>
-			</svg>
+		<div class="hidden md:grid mt-12 place-content-center">
+			<svg class="h-[60vh]" viewBox="0 0 279 593" fill="none">
+                <path d="M161.804 593L158.109 563.428L150.718 507.426L77.3387 471.05L182.657 448.021L0 361.924L168.667 361.662L171.834 300.164L182.393 83.2188L185.824 13.3464L186.352 0L186.352 381.812L77.6026 383.121L279 462.676L119.571 477.069L163.388 503.239L162.332 563.428L161.804 593Z" fill="#EC2227"/>
+            </svg>                
 		</div>
 	</div>
 </section>
 
 <section class="full-width content-grid py-24">
 	<div class="full-to-content">
-		<div class="grid gap-16">
-			<div class="grid gap-4">
-				<figure class="figure aspect-square"></figure>
-				<figure class="figure aspect-square"></figure>
+		<div class="grid gap-16 lg:grid-cols-2">
+			<div class="grid sm:grid-cols-2 gap-4">
+				<figure class="figure aspect-square">
+                    <img src="/images/test.jpg" alt="" class="w-full h-full object-cover">
+                </figure>
+				<figure class="figure aspect-square">
+                    <img src="/images/test.jpg" alt="" class="w-full h-full object-cover">
+                </figure>
 			</div>
-			<div class="grid pl-4 sm:pl-0">
-				<p class="pre-title mb-2">COMPUTERISED DIAGNOSIS</p>
+			<div class="grid pl-4 md:pl-0">
+				<p class="pre-title mb-2">COMPUTERIZED DIAGNOSIS</p>
 				<h2 class="h2">Precision Diagnostics for Your Vehicle</h2>
 				<p class="my-12">
 					Our advanced computerized diagnostic system identifies issues quickly and accurately,
@@ -133,7 +132,7 @@
 
 <section class="py-24 full-width content-grid bg-dark-2">
 	<h2 class="h2 mb-16">Driving Excellence in Every Service</h2>
-	<div class="grid gap-12">
+	<div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
 		<div class="service-card">
 			<img src="/images/test.jpg" alt="" />
 			<div class="backdrop">
@@ -174,54 +173,65 @@
 </section>
 
 <section class="full-width content-grid py-24">
-	<div class="grid gap-8">
-		<div class="grid">
+	<div class="grid gap-8 lg:grid-cols-5">
+		<div class="grid content-center lg:col-span-3">
 			<h2 class="h2">Stay Informed with Our Comprehensive Vehicle Reports</h2>
-			<p class="pt-12">
-				At Mechbrif Auto, we believe in keeping you updated on your vehicle's care. Our detailed
-				vehicle reports provide a clear overview of all services performed, including inspections,
-				repairs, and recommendations for future maintenance. Transparency is key to our relationship
-				with you!
-			</p>
+            <div class="grid items-start md:grid-cols-2 lg:grid-cols-1">
+                <p class="pt-12">
+                    At Mechbrif Auto, we believe in keeping you updated on your vehicle's care. Our detailed
+                    vehicle reports provide a clear overview of all services performed, including inspections,
+                    repairs, and recommendations for future maintenance. Transparency is key to our relationship
+                    with you!
+                </p>
+                <div class=" hidden md:grid lg:hidden">
+                    <figure class="figure aspect-video w-full">
+                        <img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
+                    </figure>
+                </div>
+            </div>
 		</div>
-		<figure class="aspect-square figure">
+		<figure class="aspect-square figure md:hidden lg:grid lg:col-span-2">
 			<img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
 		</figure>
 	</div>
 </section>
 
 <section class="py-24 full-width content-grid bg-dark-2">
-	<h2 class="h2">How do we Work?</h2>
-	<div class="grid gap-8 mt-8">
-		<div class="grid gap-2">
-			<h3 class="h4">Reception & Check-in</h3>
-			<p>
-				We begin by receiving the vehicle, registering the customer and vehicle details, and
-				performing a thorough pre-operation check to assess its current condition.
-			</p>
-		</div>
-		<div class="grid gap-2">
-			<h3 class="h4">Diagnosis</h3>
-			<p>
-				Our team conducts a detailed diagnosis to identify the root cause of the issues based on the
-				customer's concerns.
-			</p>
-		</div>
-		<div class="grid gap-2">
-			<h3 class="h4">Repair & Service</h3>
-			<p>
-				We then carry out the necessary repairs or services, addressing any issues found or
-				completing the requested maintenance.
-			</p>
-		</div>
-		<div class="grid gap-2">
-			<h3 class="h4">Testing & Delivery</h3>
-			<p>
-				After repairs, we rigorously test the vehicle to ensure everything is in top shape before
-				handing it back to the customer.
-			</p>
-		</div>
-	</div>
+    <div class="grid lg:grid-cols-3">
+        <h2 class="h2">How do we Work?</h2>
+        <div class="hidden lg:grid col-span-2"></div>
+        <div class="hidden lg:grid"></div>
+        <div class="grid sm:grid-cols-2 gap-8 mt-8 lg:col-span-2">
+            <div class="grid gap-2">
+                <h3 class="h4">Reception & Check-in</h3>
+                <p>
+                    We begin by receiving the vehicle, registering the customer and vehicle details, and
+                    performing a thorough pre-operation check to assess its current condition.
+                </p>
+            </div>
+            <div class="grid gap-2">
+                <h3 class="h4">Diagnosis</h3>
+                <p>
+                    Our team conducts a detailed diagnosis to identify the root cause of the issues based on the
+                    customer's concerns.
+                </p>
+            </div>
+            <div class="grid gap-2">
+                <h3 class="h4">Repair & Service</h3>
+                <p>
+                    We then carry out the necessary repairs or services, addressing any issues found or
+                    completing the requested maintenance.
+                </p>
+            </div>
+            <div class="grid gap-2">
+                <h3 class="h4">Testing & Delivery</h3>
+                <p>
+                    After repairs, we rigorously test the vehicle to ensure everything is in top shape before
+                    handing it back to the customer.
+                </p>
+            </div>
+        </div>
+    </div>
 	<figure class="figure aspect-video mt-16">
 		<img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
 	</figure>
