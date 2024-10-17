@@ -92,11 +92,11 @@
 	];
 </script>
 
-<section class="pt-8 pb-24 breakout grid gap-[0.625rem] md:grid-cols-3 lg:grid-cols-5">
+<section class="pt-8 pb-24 breakout grid gap-[0.625rem] md:grid-cols-3 lg:grid-cols-5 xl:[grid-template-columns:1fr_auto_1fr]">
 	<div class="bg-dark-3 rounded-tl-[13.75rem] rounded-br-[13.75rem] md:rounded-br-[0] lg:rounded-br-[13.75rem] overflow-hidden hidden md:grid lg:col-span-1">
         <img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
     </div>
-	<div class="bg-dark-3 px-8 py-16 rounded-br-[13.75rem] sm:rounded-bl-[13.75rem] sm:text-center md:col-span-2 md:rounded-bl-[0] md:text-left lg:min-h-[70vh] grid content-center lg:col-span-3 lg:rounded-bl-[13.75rem] lg:text-center">
+	<div class="bg-dark-3 px-8 py-16 rounded-br-[13.75rem] sm:rounded-bl-[13.75rem] sm:text-center md:col-span-2 md:rounded-bl-[0] md:text-left lg:min-h-[70vh] grid content-center lg:col-span-1 lg:rounded-bl-[13.75rem] lg:text-center xl:w-[40rem]">
 		<h1 class="h1">Expert Auto Services to Keep You Moving</h1>
 		<p class="mt-8 max-w-[90%] sm:max-w-[26.5rem] sm:mx-auto md:mx-0 lg:mx-auto">
 			At Mechbrif Auto, we pride ourselves on offering top-tier automotive services tailored to your
