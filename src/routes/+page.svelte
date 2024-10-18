@@ -23,10 +23,10 @@
 		<Button variant="dark" on:click={toggleContactFormBoolean}>Book a Mechanic</Button>
 	</div>
 	<div class="bg-dark-3 overflow-hidden rounded-bl-[13.75rem] sm:rounded-tl-[13.75rem] md:col-span-1 md:rounded-tl-[0] lg:col-span-1">
-        <img src="/images/test.jpg" alt="" class="w-full h-full object-cover">
+        <img src="/images/lc300engineroom.webp" alt="" class="w-full h-full object-cover object-right">
     </div>
 	<div class="bg-dark-3 overflow-hidden rounded-br-[13.75rem] sm:rounded-tr-[13.75rem] md:col-span-1 md:rounded-tr-[0] lg:col-span-1">
-        <img src="/images/test.jpg" alt="" class="w-full h-full object-cover">
+        <img src="/images/cropped-spanners.webp" alt="" class="w-full h-full object-cover">
     </div>
 </section>
 
@@ -110,7 +110,7 @@
 		<div class="grid gap-16 lg:grid-cols-2">
 			<div class="grid sm:grid-cols-2 gap-4">
 				<figure class="figure aspect-square">
-                    <img src="/images/test.jpg" alt="" class="w-full h-full object-cover">
+                    <img src="/images/autel.webp" alt="" class="w-full h-full object-cover">
                 </figure>
 				<figure class="figure aspect-square">
                     <img src="/images/test.jpg" alt="" class="w-full h-full object-cover">
@@ -134,13 +134,13 @@
 	<h2 class="h2 mb-16">Driving Excellence in Every Service</h2>
 	<div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
 		<div class="service-card">
-			<img src="/images/test.jpg" alt="" />
+			<img src="/images/autel.webp" alt="" />
 			<div class="backdrop">
 				<h3>Computerized Diagnosis</h3>
 			</div>
 		</div>
 		<div class="service-card">
-			<img src="/images/test.jpg" alt="" />
+			<img src="/images/engineroomtopdown.webp" alt="" />
 			<div class="backdrop">
 				<h3>Engine Services</h3>
 			</div>
@@ -152,7 +152,7 @@
 			</div>
 		</div>
 		<div class="service-card">
-			<img src="/images/test.jpg" alt="" />
+			<img src="/images/lightfix.webp" alt="" />
 			<div class="backdrop">
 				<h3>General Service Maintenance</h3>
 			</div>
@@ -233,7 +233,7 @@
         </div>
     </div>
 	<figure class="figure aspect-video mt-16">
-		<img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
+		<img src="/images/lc300interior.webp" alt="" class="w-full h-full object-cover" />
 	</figure>
 </section>
 
