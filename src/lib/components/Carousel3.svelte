@@ -5,15 +5,17 @@
 	// Define the props using Svelte 5 Runes
 	// let { images = [] }: { images: string[] } = $props();
     let imagesOriginal: string[] = $state([
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-		"https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600",
-		"https://images.unsplash.com/photo-1682695794816-b6f1d4b9a6b4?w=900",
-		"https://images.unsplash.com/photo-1501854140801-50d01698950b?w=700",
-		"https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800",
-		"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600",
+        "/images/pics/bay.webp",
+        "/images/pics/client-tag-look.webp",
+        "/images/pics/oil-topup.webp",
+        "/images/pics/autel-in-use.webp",
+        "/images/pics/inline-4-engine.webp",
+        "/images/pics/garagebays.webp",
+        "/images/pics/tech-engine-room-top-down.webp",
+        "/images/pics/spray-job-back.webp",
     ]);
 
-    const multiplier = $state(4); // Number of times to repeat the image set for a longer carousel
+    const multiplier = $state(3); // Number of times to repeat the image set for a longer carousel
     const images = $derived(Array(multiplier).fill(imagesOriginal).flat()) // Duplicate the images for a longer carousel
     const finalImageCount = $derived(images.length) // Total number of images after duplication;
 
