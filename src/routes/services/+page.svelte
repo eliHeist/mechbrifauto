@@ -61,7 +61,7 @@
         IMAGE: Top-down shot of a clean engine bay — a Land Cruiser or similar —
         lit by a workshop fluorescent from above. Chrome and metal textures. Real, not staged.
       */
-			image: "/images/engine-bay.webp",
+			image: "/images/pics/inline-6-close-ariel.webp",
 		},
 		{
 			id: "suspension",
@@ -83,7 +83,7 @@
         IMAGE: Under-car shot (low angle) showing suspension components —
         visible coil spring, brake rotor, caliper. Gritty but well-lit. Real workshop floor.
       */
-			image: "/images/suspension-work.webp",
+			image: "/images/pics/suspension-ripped-sq.webp",
 		},
 		{
 			id: "maintenance",
@@ -105,7 +105,7 @@
         IMAGE: A mechanic's gloved hands doing an oil drain — amber oil flowing
         into a drain pan under the vehicle. Dark background, warm light on the oil.
       */
-			image: "/images/oil-change.webp",
+			image: "/images/pics/oil-topup-potrait.webp",
 		},
 		{
 			id: "rescue",
@@ -128,7 +128,7 @@
         Daytime, van or truck visible in the background with Mechbrif branding (or placeholder).
         Should feel mobile and capable, not cheap.
       */
-			image: "/images/mobile-service.webp",
+			image: "/images/pics/v8-engine-room.webp",
 		},
 		{
 			id: "panel-beating",
@@ -150,7 +150,7 @@
         IMAGE: A vehicle being spray-painted in a paint booth — vibrant colour
         being applied with professional spray gun. Should show precision and quality equipment.
       */
-			image: "/images/panel-spray.webp",
+			image: "/images/pics/spray-job-side.webp",
 		},
 	]
 </script>
@@ -162,9 +162,6 @@
 <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
 <section class="pt-40 pb-20 content-grid">
 	<div class="">
-		<p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-6">
-			What We Offer
-		</p>
 		<h1
 			class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.88] text-[clamp(4rem,10vw,9rem)]">
 			Every<br />Service<br />You Need.
@@ -178,7 +175,7 @@
 </section>
 
 <!-- Sticky nav for service categories -->
-<div class="sticky top-20 z-30 bg-[#141414] border-b border-white/10 content-grid">
+<!-- <div class="sticky top-20 z-30 bg-[#141414] border-b border-white/10 content-grid">
 	<div class="content-grid">
         <div class="flex gap-0">
             {#each categories as cat}
@@ -190,7 +187,7 @@
             {/each}
         </div>
 	</div>
-</div>
+</div> -->
 
 <!-- ─── SERVICE CATEGORIES ─────────────────────────────────────────────────── -->
 {#each categories as cat, i}
@@ -218,10 +215,6 @@
 
 				<!-- Content -->
 				<div>
-					<p
-						class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-4">
-						{cat.label}
-					</p>
 					<h2
 						class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.9] text-[clamp(2.5rem,5vw,4.5rem)] mb-6">
 						{cat.headline}
