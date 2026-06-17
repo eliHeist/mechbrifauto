@@ -4,6 +4,8 @@
 
     let menuOpen = $state(false)
 	let scrolled = $state(false)
+    let scrolledDown = $state(false)
+    let prevScrollY = $state(0)
 
 	const navLinks = [
 		{ label: "Home", href: "/" },
@@ -14,6 +16,12 @@
 	onMount(() => {
 		const handleScroll = () => {
 			scrolled = window.scrollY > 100
+
+            // track scroll direction
+            if (window.scrollY > 100){
+                scrolledDown = window.scrollY > prevScrollY
+                prevScrollY = window.scrollY
+            }
 		}
 		window.addEventListener("scroll", handleScroll, { passive: true })
 		return () => window.removeEventListener("scroll", handleScroll)
@@ -29,19 +37,19 @@
 <!-- Global nav — fixed, transparent on hero, fills in on scroll -->
 <header
 	class="content-grid fixed top-0 left-0 right-0 z-50">
-	<div class="flex items-center justify-between h-28">
+	<div class="flex items-center justify-between {scrolledDown ? 'h-16' : 'h-28'} transition-all duration-300">
 		<!-- Logo -->
 		<a
 			href="/"
 			class="z-50 relative" title="Mechbrif Auto">
-			<img src="/logo.png" alt="Mechbrif Auto Logo" class="h-16">
+			<img src="/logo.png" alt="Mechbrif Auto Logo" class="{scrolledDown ? 'h-10' : 'h-16'} transition-all duration-300" />
 		</a>
 
 		<!-- Desktop nav -->
-		<nav class="hidden md:flex items-center gap-10">
-            <div class="md:flex items-center gap-10 py-3 px-6 border border-transparent transition-all duration-300 {scrolled
-		? 'bg-[#0D0D0D]/10 backdrop-blur-sm border-white/10'
-		: 'bg-transparent'}">
+		<nav class="hidden md:flex items-center gap-4">
+            <div class="md:flex items-center border border-transparent transition-all duration-300 
+            {scrolled ? 'bg-[#0D0D0D]/10 backdrop-blur-sm border-white/10' : 'bg-transparent'}
+            {scrolledDown ? 'gap-4 py-2 px-4' : 'gap-10 py-3 px-6'}">
                 {#each navLinks as link}
                     <a
                         href={link.href}
@@ -53,8 +61,9 @@
             </div>
 			<a
 				href="/contact"
-				class="font-['Inter'] font-600 text-xs tracking-widest uppercase px-6 py-3 transition-colors 
-                {currentPath === '/contact' ? 'bg-red-700 text-white' : 'bg-red-600 text-white hover:bg-red-700'}">
+				class="font-['Inter'] font-600 text-xs tracking-widest uppercase transition-all duration-500 
+                {currentPath === '/contact' ? 'bg-red-700 text-white' : 'bg-red-600 text-white hover:bg-red-700'}
+                {scrolledDown ? 'py-2 px-4' : 'py-3 px-6'}">
 				Book Now
 			</a>
 		</nav>
