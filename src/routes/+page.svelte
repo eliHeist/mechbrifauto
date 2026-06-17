@@ -1,289 +1,346 @@
-<script lang="ts">
-	import Button from '$lib/components/ui/button/button.svelte';
-	import HomeCarousel from '$lib/sections/homeCarousel.svelte';
+<script>
+	import HomeHero from "$lib/components/HomeHero.svelte"
+    import Carousel from "$lib/components/Carousel.svelte"
+    import { onMount } from "svelte"
+	import Carousel2 from "$lib/components/Carousel2.svelte"
+	import Carousel3 from "$lib/components/Carousel3.svelte"
 
-    import { contactFormBoolean } from '$lib/stores/booleanStore';
+	let heroVisible = $state(false)
 
-	function toggleContactFormBoolean() {
-		contactFormBoolean.update((value) => !value);
-	}
+	const services = [
+		{
+			label: "DIAGNOSTICS",
+			title: "Computerized Diagnosis",
+			desc: "Autel-powered scans that pinpoint the exact fault — no guessing, no unnecessary parts.",
+			icon: "⬡",
+		},
+		{
+			label: "ENGINE",
+			title: "Engine Services",
+			desc: "Full engine repair, overhaul, and tune-up. We work on what others turn away.",
+			icon: "◈",
+		},
+		{
+			label: "SUSPENSION",
+			title: "Suspension & Steering",
+			desc: "Alignment, shocks, bushings, and steering systems restored to factory feel.",
+			icon: "◎",
+		},
+		{
+			label: "MAINTENANCE",
+			title: "General Service",
+			desc: "Oils, filters, brakes, fluids — all the regular care that keeps you moving.",
+			icon: "◇",
+		},
+		{
+			label: "RESCUE",
+			title: "Road Rescue",
+			desc: "Broke down? We come to you. On-site repair anywhere in and around Kampala.",
+			icon: "◉",
+		},
+		{
+			label: "RESTORATION",
+			title: "Vehicle Restoration",
+			desc: "Bringing older vehicles back to life — mechanical, electrical, and cosmetic.",
+			icon: "◈",
+		},
+	]
+
+	const stats = [
+		{ value: "320+", image: null, label: "Vehicles Serviced" },
+		{ value: "6+", image: null, label: "Years Operating" },
+		{ value: "100%", image: null, label: "Digital Reports" },
+		{ value: "2", image: 'images/toyota-subaru-logos.png', label: "Expertise" },
+	]
+
+	const testimonials = [
+		{
+			name: "Sarah M.",
+			text: "The team came to my office and serviced my car while I worked. They even provided a detailed report afterward. Absolutely seamless.",
+			role: "Regular Client",
+		},
+		{
+			name: "John D.",
+			text: "Their computerized diagnostics were spot-on. Fixed the issue the same day. I've never had a mechanic this efficient.",
+			role: "Fleet Manager",
+		},
+		{
+			name: "Jane S.",
+			text: "Fast, professional, and fair pricing. The team actually explains what's wrong with your car in plain language.",
+			role: "Returning Client",
+		},
+	]
+
+	const process = $state([
+		{
+			step: "01",
+			title: "Reception & Check-In",
+			desc: "We register your vehicle and run a full pre-operation check to document its condition before we start.",
+		},
+		{
+			step: "02",
+			title: "Diagnosis",
+			desc: "Our Autel scanner reads every fault code. We brief you on exactly what we find, before doing anything.",
+		},
+		{
+			step: "03",
+			title: "Repair & Service",
+			desc: "Approved repairs only. We use quality parts and keep you updated as the work progresses.",
+		},
+		{
+			step: "04",
+			title: "Testing & Delivery",
+			desc: "We road-test and validate every fix before handing back your car with a full digital service report.",
+		},
+	])
 </script>
 
-<section class="pt-8 pb-24 grid gap-[0.625rem] grid-cols-2 sm:grid-cols-3">
-	<div class="bg-dark-3 px-8 py-16 rounded-tr-[13.75rem] col-span-2 sm:row-span-2 md:col-span-2 lg:col-span-1 lg:row-span-1">
-		<p class="pre-title grid sm:flex flex-wrap space-x-1 mb-2">
-			<span>Expert Care, </span>
-			<span>Wherever You Are</span>
-		</p>
-		<h1 class="h2">Convenient <br />Auto Service <br />Anywhere</h1>
-		<p class="my-10">
-			Get your vehicle repairs and services done at the most convenient location. Timely, reliable,
-			and hassle-free auto care right here.
-		</p>
-		<Button variant="dark" on:click={toggleContactFormBoolean}>Book a Mechanic</Button>
-	</div>
-	<div class="bg-dark-3 overflow-hidden rounded-bl-[13.75rem] sm:rounded-tl-[13.75rem] md:col-span-1 md:rounded-tl-[0] lg:col-span-1">
-        <img src="/images/lc300engineroom.webp" alt="" class="w-full h-full object-cover object-right">
-    </div>
-	<div class="bg-dark-3 overflow-hidden rounded-br-[13.75rem] sm:rounded-tr-[13.75rem] md:col-span-1 md:rounded-tr-[0] lg:col-span-1">
-        <img src="/images/cropped-spanners.webp" alt="" class="w-full h-full object-cover">
-    </div>
-</section>
+<svelte:head>
+	<title>Mechbrif Auto — Expert Auto Care, Kampala</title>
+</svelte:head>
 
-<section class="py-24 full-width content-grid bg-dark-2">
-	<div class="grid md:grid-cols-2">
-		<div>
-			<p class="pre-title mb-2">Expert Care, Wherever You Are</p>
-			<h2 class="h1">Restoring Brilliance,<br />Inside and out.</h2>
-			<p class="my-12">
-				At Mechbrif Auto, we bring your vehicle back to its best, both inside and out. From interior
-				deep cleaning to exterior polishing, we ensure every inch of your car shines like new.
-				Experience expert detailing that enhances your car’s appearance and longevity.
-			</p>
+<!-- <Carousel3 /> -->
+<HomeHero />
 
-			<div class="grid sm:grid-cols-2 gap-8">
-				<div class="flex items-start gap-6">
-					<svg class="w-[8rem]" viewBox="0 0 64 64" fill="none">
-						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
-							d="M57.4188 30.8961L55.3335 29.2267V56.6667H58.6668C59.1973 56.6667 59.706 56.8774 60.081 57.2525C60.4561 57.6276 60.6668 58.1363 60.6668 58.6667C60.6668 59.1972 60.4561 59.7059 60.081 60.0809C59.706 60.456 59.1973 60.6667 58.6668 60.6667H5.3335C4.80306 60.6667 4.29436 60.456 3.91928 60.0809C3.54421 59.7059 3.3335 59.1972 3.3335 58.6667C3.3335 58.1363 3.54421 57.6276 3.91928 57.2525C4.29436 56.8774 4.80306 56.6667 5.3335 56.6667H8.66683V29.2267L6.58416 30.8961C6.37895 31.0601 6.14343 31.1822 5.89106 31.2552C5.63868 31.3283 5.37439 31.3509 5.11327 31.3218C4.85215 31.2927 4.59932 31.2124 4.36921 31.0856C4.13911 30.9588 3.93623 30.7879 3.77216 30.5827C3.6081 30.3775 3.48606 30.142 3.41301 29.8896C3.33997 29.6372 3.31735 29.373 3.34645 29.1118C3.37554 28.8507 3.45578 28.5979 3.58259 28.3678C3.7094 28.1377 3.88028 27.9348 4.0855 27.7707L25.7522 10.4374C27.5255 9.01836 29.729 8.24524 32.0002 8.24524C34.2713 8.24524 36.4749 9.01836 38.2482 10.4374L59.9148 27.7707C60.1236 27.9334 60.298 28.1359 60.4279 28.3665C60.5578 28.597 60.6407 28.8511 60.6717 29.1139C60.7027 29.3767 60.6812 29.6431 60.6086 29.8976C60.5359 30.1521 60.4134 30.3896 60.2482 30.5964C60.0831 30.8032 59.8785 30.9751 59.6464 31.1023C59.4143 31.2294 59.1593 31.3093 58.8961 31.3372C58.6329 31.365 58.3669 31.3404 58.1133 31.2647C57.8597 31.189 57.6236 31.0637 57.4188 30.8961ZM32.0002 18.0001C30.0552 18.0001 28.19 18.7727 26.8147 20.1479C25.4394 21.5232 24.6668 23.3885 24.6668 25.3334C24.6668 27.2783 25.4394 29.1436 26.8147 30.5188C28.19 31.8941 30.0552 32.6667 32.0002 32.6667C33.9451 32.6667 35.8103 31.8941 37.1856 30.5188C38.5609 29.1436 39.3335 27.2783 39.3335 25.3334C39.3335 23.3885 38.5609 21.5232 37.1856 20.1479C35.8103 18.7727 33.9451 18.0001 32.0002 18.0001ZM36.6562 35.4987C35.4322 35.3334 33.9042 35.3334 32.1308 35.3334H31.8695C30.0962 35.3334 28.5682 35.3334 27.3442 35.4987C26.0348 35.6747 24.7762 36.0721 23.7575 37.0907C22.7388 38.1094 22.3415 39.3681 22.1655 40.6774C22.0002 41.9014 22.0002 43.4294 22.0002 45.2027V56.6667H42.0002V44.8721C42.0002 43.2401 41.9895 41.8241 41.8348 40.6774C41.6588 39.3681 41.2615 38.1094 40.2428 37.0907C39.2242 36.0721 37.9682 35.6747 36.6562 35.4987Z"
-							fill="#666666"
-						/>
-						<g opacity="0.5">
-							<path
-								d="M28.6665 25.3333C28.6665 24.4493 29.0177 23.6014 29.6428 22.9763C30.2679 22.3512 31.1158 22 31.9998 22C32.8839 22 33.7317 22.3512 34.3569 22.9763C34.982 23.6014 35.3332 24.4493 35.3332 25.3333C35.3332 26.2174 34.982 27.0652 34.3569 27.6904C33.7317 28.3155 32.8839 28.6667 31.9998 28.6667C31.1158 28.6667 30.2679 28.3155 29.6428 27.6904C29.0177 27.0652 28.6665 26.2174 28.6665 25.3333Z"
-								fill="#666666"
-							/>
-							<path
-								d="M28.6665 25.3333C28.6665 24.4493 29.0177 23.6014 29.6428 22.9763C30.2679 22.3512 31.1158 22 31.9998 22C32.8839 22 33.7317 22.3512 34.3569 22.9763C34.982 23.6014 35.3332 24.4493 35.3332 25.3333C35.3332 26.2174 34.982 27.0652 34.3569 27.6904C33.7317 28.3155 32.8839 28.6667 31.9998 28.6667C31.1158 28.6667 30.2679 28.3155 29.6428 27.6904C29.0177 27.0652 28.6665 26.2174 28.6665 25.3333Z"
-								fill="#666666"
-							/>
-						</g>
-						<path
-							opacity="0.5"
-							d="M32.1333 35.3333C33.904 35.3333 35.432 35.3333 36.656 35.4987C37.968 35.6747 39.224 36.072 40.2427 37.0907C41.2613 38.1093 41.6587 39.3653 41.8347 40.6773C41.9893 41.824 42 43.2373 42 44.872V56.6667H22V45.2C22 43.4293 22 41.9013 22.1653 40.6773C22.3413 39.3653 22.7387 38.1093 23.7573 37.0907C24.776 36.072 26.0347 35.6747 27.344 35.4987C28.568 35.3333 30.096 35.3333 31.8693 35.3333H32.1333ZM42.6667 8H49.3333C49.687 8 50.0261 8.14048 50.2761 8.39052C50.5262 8.64057 50.6667 8.97971 50.6667 9.33333V20.3733L41.3333 12.9067V9.33333C41.3333 8.97971 41.4738 8.64057 41.7239 8.39052C41.9739 8.14048 42.313 8 42.6667 8Z"
-							fill="#666666"
-						/>
-					</svg>
-					<div>
-						<h3 class="font-bold text-white mb-3">On-Site Services</h3>
-						<p>Get your vehicle serviced at your location for maximum convenience.</p>
-					</div>
-				</div>
-				<div class="flex items-start gap-6">
-					<svg class="w-[8rem]" viewBox="0 0 64 64" fill="none">
-						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
-							d="M26.6855 10.0587L10.6855 24.28C9.84115 25.0305 9.16532 25.9513 8.70248 26.9818C8.23964 28.0122 8.00028 29.1291 8.00016 30.2587V56.6667H5.3335C4.80306 56.6667 4.29436 56.8774 3.91928 57.2525C3.54421 57.6276 3.3335 58.1363 3.3335 58.6667C3.3335 59.1972 3.54421 59.7059 3.91928 60.0809C4.29436 60.456 4.80306 60.6667 5.3335 60.6667H58.6668C59.1973 60.6667 59.706 60.456 60.081 60.0809C60.4561 59.7059 60.6668 59.1972 60.6668 58.6667C60.6668 58.1363 60.4561 57.6276 60.081 57.2525C59.706 56.8774 59.1973 56.6667 58.6668 56.6667H56.0002V30.2587C56 29.1291 55.7607 28.0122 55.2978 26.9818C54.835 25.9513 54.1592 25.0305 53.3148 24.28L37.3148 10.0587C35.8505 8.75715 33.9594 8.03821 32.0002 8.03821C30.041 8.03821 28.1499 8.75715 26.6855 10.0587ZM26.6668 22C26.1364 22 25.6277 22.2108 25.2526 22.5858C24.8775 22.9609 24.6668 23.4696 24.6668 24C24.6668 24.5305 24.8775 25.0392 25.2526 25.4143C25.6277 25.7893 26.1364 26 26.6668 26H37.3335C37.8639 26 38.3726 25.7893 38.7477 25.4143C39.1228 25.0392 39.3335 24.5305 39.3335 24C39.3335 23.4696 39.1228 22.9609 38.7477 22.5858C38.3726 22.2108 37.8639 22 37.3335 22H26.6668ZM37.4722 30.0001C39.8695 30.0001 41.8668 30.0001 43.4508 30.2134C45.1255 30.4374 46.6375 30.9334 47.8508 32.1494C49.0668 33.3627 49.5628 34.8747 49.7868 36.5494C50.0002 38.1334 50.0002 40.1334 50.0002 42.5281V56.6667H14.0002V42.5281C14.0002 40.1334 14.0002 38.1334 14.2135 36.5494C14.4375 34.8747 14.9335 33.3627 16.1468 32.1494C17.3628 30.9334 18.8748 30.4374 20.5468 30.2134C22.1335 30.0001 24.1335 30.0001 26.5282 30.0001H37.4722Z"
-							fill="#666666"
-						/>
-						<path
-							opacity="0.5"
-							d="M37.472 30H26.528C24.1333 30 22.1333 30 20.5493 30.2133C18.8747 30.4373 17.3627 30.9333 16.1493 32.1493C14.9333 33.3627 14.4373 34.8747 14.2133 36.5493C14 38.1333 14 40.1333 14 42.528V56.6667H50V42.528C50 40.1333 50 38.1333 49.7867 36.5493C49.5627 34.8747 49.0667 33.3627 47.8507 32.1493C46.6373 30.9333 45.1253 30.4373 43.4507 30.2133C41.8667 30 39.8667 30 37.472 30Z"
-							fill="#666666"
-						/>
-						<path
-							d="M24 39.3334C23.4696 39.3334 22.9609 39.5441 22.5858 39.9192C22.2107 40.2942 22 40.8029 22 41.3334C22 41.8638 22.2107 42.3725 22.5858 42.7476C22.9609 43.1227 23.4696 43.3334 24 43.3334H40C40.5304 43.3334 41.0391 43.1227 41.4142 42.7476C41.7893 42.3725 42 41.8638 42 41.3334C42 40.8029 41.7893 40.2942 41.4142 39.9192C41.0391 39.5441 40.5304 39.3334 40 39.3334H24ZM24 47.3334C23.4696 47.3334 22.9609 47.5441 22.5858 47.9192C22.2107 48.2942 22 48.8029 22 49.3334C22 49.8638 22.2107 50.3725 22.5858 50.7476C22.9609 51.1227 23.4696 51.3334 24 51.3334H40C40.5304 51.3334 41.0391 51.1227 41.4142 50.7476C41.7893 50.3725 42 49.8638 42 49.3334C42 48.8029 41.7893 48.2942 41.4142 47.9192C41.0391 47.5441 40.5304 47.3334 40 47.3334H24Z"
-							fill="#666666"
-						/>
-					</svg>
-
-					<div>
-						<h3 class="font-bold text-white mb-3">Garage Services</h3>
-						<p>Visit our fully equipped garage for a wide range of services.</p>
-					</div>
+<!-- ─── STATS BAR ─────────────────────────────────────────────────────────── -->
+<section class="breakout bg-[#141414] border border-white/10">
+	<div class="py-10 grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-white/10">
+		{#each stats as stat}
+			<div class="px-8 first:pl-0 text-center">
+                {#if stat.image}
+                    <img src={stat.image} alt={`${stat.value} ${stat.label}`} class="mx-auto mb-2 h-[clamp(2.5rem,5vw,4rem)]" />
+                {:else}
+                    <div class="font-['Barlow_Condensed'] font-900 text-[clamp(2.5rem,5vw,4rem)] leading-none text-white">
+                        {stat.value}
+                    </div>
+                {/if}
+				<div class="font-['Inter'] text-xs tracking-widest uppercase text-white/40 mt-1">
+					{stat.label}
 				</div>
 			</div>
-		</div>
-		<div class="hidden md:grid mt-12 place-content-center">
-			<svg class="h-[60vh]" viewBox="0 0 279 593" fill="none">
-                <path d="M161.804 593L158.109 563.428L150.718 507.426L77.3387 471.05L182.657 448.021L0 361.924L168.667 361.662L171.834 300.164L182.393 83.2188L185.824 13.3464L186.352 0L186.352 381.812L77.6026 383.121L279 462.676L119.571 477.069L163.388 503.239L162.332 563.428L161.804 593Z" fill="#EC2227"/>
-            </svg>                
-		</div>
+		{/each}
 	</div>
 </section>
 
-<section class="full-width content-grid py-24">
-	<div class="full-to-content">
-		<div class="grid gap-16 lg:grid-cols-2">
-			<div class="grid sm:grid-cols-2 gap-4">
-				<figure class="figure aspect-square">
-                    <img src="/images/autel.webp" alt="" class="w-full h-full object-cover">
-                </figure>
-				<figure class="figure aspect-square">
-                    <img src="/images/test.jpg" alt="" class="w-full h-full object-cover">
-                </figure>
+<!-- ─── DIFFERENTIATOR ────────────────────────────────────────────────────── -->
+<section class="py-28 md:py-40 overflow-hidden">
+	<div class="">
+		<div class="">
+			<!-- <p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-6">
+				What Sets Us Apart
+			</p> -->
+			<h2
+				class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.9] text-[clamp(3rem,8vw,7rem)] max-w-4xl">
+				We Find Exactly What's Wrong.
+			</h2>
+		</div>
+
+		<div class="mt-16 md:mt-24 grid md:grid-cols-2 gap-0">
+			<!-- Left: image -->
+			<div
+				class="relative">
+				<!--
+          IMAGE: Close-up of the Autel diagnostic scanner screen in use —
+          showing a live vehicle fault code readout. Shot in a dark garage, red/orange
+          screen glow on the mechanic's face. High contrast, editorial quality.
+        -->
+				<img
+					src="/images/autel.webp"
+					alt="Autel computerized diagnostics"
+					class="w-full h-125 object-cover" />
+				<div
+					class="absolute top-6 left-6 bg-red-600 text-white font-['Inter'] text-xs font-600 tracking-widest uppercase px-4 py-2">
+					Autel-Powered
+				</div>
 			</div>
-			<div class="grid pl-4 md:pl-0">
-				<p class="pre-title mb-2">COMPUTERIZED DIAGNOSIS</p>
-				<h2 class="h2">Precision Diagnostics for Your Vehicle</h2>
-				<p class="my-12">
-					Our advanced computerized diagnostic system identifies issues quickly and accurately,
-					ensuring your vehicle receives the precise care it needs. From engine performance to
-					electrical systems, we utilize cutting-edge technology to troubleshoot and resolve
-					problems efficiently.
+
+			<!-- Right: copy -->
+			<div
+				class="bg-[#141414] p-10 md:p-16 flex flex-col justify-center">
+				<p class="font-['Inter'] text-white/70 text-lg leading-relaxed">
+					We don't guess. We scan first.
 				</p>
+				<p class="font-['Inter'] text-white/70 text-lg leading-relaxed mt-4">
+					Our Autel computerized diagnostic system reads your vehicle's exact fault codes
+					across the engine, transmission, ABS, airbags, and all electronic systems before
+					a single spanner is touched.
+				</p>
+				<p class="font-['Inter'] text-white/70 text-lg leading-relaxed mt-4">
+					That means faster repairs, correct parts the first time, and a detailed report
+					you can actually read.
+				</p>
+				<a
+					href="/services"
+					class="mt-10 self-start font-['Inter'] font-600 text-sm tracking-widest uppercase text-red-600 flex items-center gap-3 group">
+					See All Services
+					<span class="inline-block transition-transform group-hover:translate-x-2"
+						>→</span>
+				</a>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section class="py-24 full-width content-grid bg-dark-2">
-	<h2 class="h2 mb-16">Driving Excellence in Every Service</h2>
-	<div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
-		<div class="service-card">
-			<img src="/images/autel.webp" alt="" />
-			<div class="backdrop">
-				<h3>Computerized Diagnosis</h3>
+<!-- ─── SERVICES GRID ─────────────────────────────────────────────────────── -->
+<section class="content-grid bg-[#141414] py-28 md:py-40">
+	<div class="">
+		<div
+			class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+			<div>
+				<!-- <p
+					class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-4">
+					What We Do
+				</p> -->
+				<h2
+					class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.9] text-[clamp(3rem,6vw,5.5rem)]">
+					Full-Spectrum<br />Auto Care.
+				</h2>
 			</div>
+			<a
+				href="/services"
+				class="font-['Inter'] font-500 text-sm tracking-widest uppercase border border-white/20 text-white/60 px-8 py-4 hover:border-white hover:text-white transition-colors self-start md:self-end">
+				All Services →
+			</a>
 		</div>
-		<div class="service-card">
-			<img src="/images/engineroomtopdown.webp" alt="" />
-			<div class="backdrop">
-				<h3>Engine Services</h3>
-			</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
+			{#each services as service, i}
+				<div class="transition-all duration-700 bg-[#141414] p-10 hover:bg-[#1A1A1A] group">
+					<div
+						class="font-['Inter'] text-xs tracking-[0.3em] text-red-600 uppercase mb-6">
+						{service.label}
+					</div>
+					<h3
+						class="font-['Barlow_Condensed'] font-800 text-white uppercase text-3xl leading-tight mb-4 group-hover:text-red-600 transition-colors">
+						{service.title}
+					</h3>
+					<p class="font-['Inter'] text-white/50 text-sm leading-relaxed">
+						{service.desc}
+					</p>
+					<div
+						class="mt-8 w-8 h-px bg-red-600 group-hover:w-16 transition-all duration-300">
+					</div>
+				</div>
+			{/each}
 		</div>
-		<div class="service-card">
-			<img src="/images/test.jpg" alt="" />
-			<div class="backdrop">
-				<h3>Suspension and Steering</h3>
-			</div>
+	</div>
+</section>
+
+<!-- ─── HOW WE WORK ───────────────────────────────────────────────────────── -->
+<section class="content-grid py-28 md:py-40">
+	<div class="">
+		<div class="mb-20">
+			<!-- <p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-4">
+				The Process
+			</p> -->
+			<h2
+				class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.9] text-[clamp(3rem,6vw,5.5rem)]">
+				How We Work.
+			</h2>
 		</div>
-		<div class="service-card">
-			<img src="/images/lightfix.webp" alt="" />
-			<div class="backdrop">
-				<h3>General Service Maintenance</h3>
-			</div>
+
+		<div class="grid md:grid-cols-4 gap-16">
+			{#each process as step, i}
+				<div class="pt-10 pb-10">
+					<div
+						class="font-['Barlow_Condensed'] font-900 text-[5rem] leading-none text-white/10 mb-4 select-none">
+						{step.step}
+					</div>
+					<h3
+						class="font-['Barlow_Condensed'] font-800 text-white uppercase text-2xl leading-tight mb-4">
+						{step.title}
+					</h3>
+					<p class="font-['Inter'] text-white/50 text-sm leading-relaxed">{step.desc}</p>
+				</div>
+			{/each}
 		</div>
-		<div class="service-card">
-			<img src="/images/test.jpg" alt="" />
-			<div class="backdrop">
-				<h3>Road Rescue Services</h3>
-			</div>
+	</div>
+</section>
+
+<!-- ─── FULL-BLEED CTA BANNER ─────────────────────────────────────────────── -->
+<section class="full-width relative bg-[#141414] py-0 overflow-hidden">
+	<!--
+    IMAGE: A wide-angle shot inside the Mechbrif garage bay — multiple cars visible,
+    mechanics working, bright workshop lights overhead against the dark ceiling.
+    Should feel busy, competent, and real. Not staged.
+  -->
+	<div class="absolute inset-0">
+		<img
+			src="/images/garage-bay-wide.webp"
+			alt="Mechbrif Auto garage bay"
+			class="w-full h-full object-cover opacity-20" />
+		<div
+			class="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/80 to-transparent">
 		</div>
-		<div class="service-card">
-			<img src="/images/test.jpg" alt="" />
-			<div class="backdrop">
-				<h3>Vehicle Restorations</h3>
+	</div>
+	<div class="relative z-10 content-grid px-8 md:px-16 py-28 md:py-40">
+		<div class="max-w-2xl">
+			<h2
+				class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.9] text-[clamp(3rem,7vw,6rem)] mb-8">
+				We Come To You.<br />Or You Come To Us.
+			</h2>
+			<p class="font-['Inter'] text-white/60 text-lg leading-relaxed mb-10">
+				On-site service at your home or office. Or drop in to our Namugongo garage. Either
+				way, you get the same expert care.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4">
+				<a
+					href="/contact"
+					class="font-['Inter'] font-600 text-sm tracking-widest uppercase bg-red-600 text-white px-10 py-4 hover:bg-red-700 transition-colors text-center">
+					Book On-Site Service
+				</a>
+				<a
+					href="https://wa.me/256759158049"
+					target="_blank"
+					rel="noopener"
+					class="font-['Inter'] font-600 text-sm tracking-widest uppercase border border-white/30 text-white px-10 py-4 hover:border-white transition-colors text-center">
+					WhatsApp Us
+				</a>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section class="full-width content-grid py-24">
-	<div class="grid gap-8 lg:grid-cols-5">
-		<div class="grid content-center lg:col-span-3">
-			<h2 class="h2">Stay Informed with Our Comprehensive Vehicle Reports</h2>
-            <div class="grid items-start md:grid-cols-2 lg:grid-cols-1">
-                <p class="pt-12">
-                    At Mechbrif Auto, we believe in keeping you updated on your vehicle's care. Our detailed
-                    vehicle reports provide a clear overview of all services performed, including inspections,
-                    repairs, and recommendations for future maintenance. Transparency is key to our relationship
-                    with you!
-                </p>
-                <div class=" hidden md:grid lg:hidden">
-                    <figure class="figure aspect-video w-full">
-                        <img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
-                    </figure>
-                </div>
-            </div>
+<!-- ─── TESTIMONIALS ───────────────────────────────────────────────────────── -->
+<section class="content-grid py-28 md:py-40">
+	<div class="">
+		<div class="mb-16">
+			<!-- <p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-4">
+				Client Feedback
+			</p> -->
+			<h2
+				class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.9] text-[clamp(3rem,6vw,5.5rem)]">
+				Real People.<br />Real Results.
+			</h2>
 		</div>
-		<figure class="aspect-square figure md:hidden lg:grid lg:col-span-2">
-			<img src="/images/test.jpg" alt="" class="w-full h-full object-cover" />
-		</figure>
+
+		<div class="grid md:grid-cols-3 gap-px bg-white/10">
+			{#each testimonials as t, i}
+				<div
+					class="transition-all duration-700 bg-[#0D0D0D] p-10 flex flex-col">
+					<div class="flex gap-1 mb-6">
+						{#each Array(5) as _}
+							<span class="text-red-600 text-xs">★</span>
+						{/each}
+					</div>
+					<p class="font-['Inter'] text-white/80 text-lg leading-relaxed mb-8 flex-1">
+						"{t.text}"
+					</p>
+					<div class="border-t border-white/10 pt-6 ">
+						<div
+							class="font-['Barlow_Condensed'] font-700 text-white uppercase text-xl">
+							{t.name}
+						</div>
+						<div
+							class="font-['Inter'] text-xs text-white/40 tracking-widest uppercase mt-1">
+							{t.role}
+						</div>
+					</div>
+				</div>
+			{/each}
+		</div>
 	</div>
 </section>
 
-<section class="py-24 full-width content-grid bg-dark-2">
-    <div class="grid lg:grid-cols-3">
-        <h2 class="h2">How do we Work?</h2>
-        <div class="hidden lg:grid col-span-2"></div>
-        <div class="hidden lg:grid"></div>
-        <div class="grid sm:grid-cols-2 gap-8 mt-8 lg:col-span-2">
-            <div class="grid gap-2">
-                <h3 class="h4">Reception & Check-in</h3>
-                <p>
-                    We begin by receiving the vehicle, registering the customer and vehicle details, and
-                    performing a thorough pre-operation check to assess its current condition.
-                </p>
-            </div>
-            <div class="grid gap-2">
-                <h3 class="h4">Diagnosis</h3>
-                <p>
-                    Our team conducts a detailed diagnosis to identify the root cause of the issues based on the
-                    customer's concerns.
-                </p>
-            </div>
-            <div class="grid gap-2">
-                <h3 class="h4">Repair & Service</h3>
-                <p>
-                    We then carry out the necessary repairs or services, addressing any issues found or
-                    completing the requested maintenance.
-                </p>
-            </div>
-            <div class="grid gap-2">
-                <h3 class="h4">Testing & Delivery</h3>
-                <p>
-                    After repairs, we rigorously test the vehicle to ensure everything is in top shape before
-                    handing it back to the customer.
-                </p>
-            </div>
-        </div>
-    </div>
-	<figure class="figure aspect-video mt-16">
-		<img src="/images/lc300interior.webp" alt="" class="w-full h-full object-cover" />
-	</figure>
-</section>
-
-<section class="full-width content-grid py-24">
-	<h2 class="h2">Client Feedback</h2>
-	<div class="full-width mt-8">
-		<HomeCarousel />
-	</div>
-</section>
-
-<style lang="scss">
-	.service-card {
-		@apply bg-dark-3 aspect-square relative overflow-hidden;
-
-		img {
-			object-fit: cover;
-			width: 100%;
-			height: 100%;
-			scale: 1;
-			transition: scale 500ms ease-in-out;
-		}
-
-		.backdrop {
-			position: absolute;
-			inset: 0;
-			padding: 1rem;
-			display: grid;
-			align-content: end;
-			transition: all 500ms ease-in-out;
-
-			background-image: linear-gradient(
-				to top,
-				rgba(0, 0, 0, 0.8) 0%,
-				rgba(0, 0, 0, 0.3) 50%,
-				rgba(0, 0, 0, 0) 100%
-			);
-
-			h3 {
-				@apply text-white font-bold;
-			}
-		}
-
-		&:hover {
-			img {
-				scale: 1.1;
-			}
-
-			.backdrop {
-				opacity: 0.8;
-			}
-		}
-	}
+<style>
 </style>
