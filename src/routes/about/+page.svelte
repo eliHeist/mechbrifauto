@@ -1,21 +1,4 @@
 <script>
-	import { onMount } from "svelte"
-
-	onMount(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add("revealed")
-						observer.unobserve(entry.target)
-					}
-				})
-			},
-			{ threshold: 0.12 },
-		)
-		document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
-		return () => observer.disconnect()
-	})
 
 	const values = [
 		{
@@ -58,9 +41,6 @@
 		</div>
 	</div>
 	<div class="relative z-10 max-w-7xl mx-auto px-8 md:px-16 pb-24 pt-40">
-		<p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-6">
-			Our Story
-		</p>
 		<h1
 			class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.88] text-[clamp(4rem,10vw,9rem)] max-w-3xl">
 			Built on<br />Straight Talk.
@@ -71,12 +51,12 @@
 <!-- ─── STORY ─────────────────────────────────────────────────────────────── -->
 <section class="content-grid py-24 md:py-36 px-8 md:px-16">
 	<div class="grid md:grid-cols-2 gap-16 md:gap-28 items-start">
-		<div class="reveal opacity-0 translate-y-8 transition-all duration-700">
+		<div class="">
 			<h2 class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.9] text-[clamp(2.5rem,5vw,4rem)]">
 				Who We Are<span class="text-red-600">.</span>
 			</h2>
 		</div>
-		<div class="reveal opacity-0 translate-y-8 transition-all duration-700 delay-100 space-y-6">
+		<div class="space-y-6">
 			<p class="font-['Inter'] text-white/70 text-xl leading-relaxed">
 				Mechbrif Auto started with a simple frustration: too many garages that guessed,
 				overcharged, and gave no explanation. We built something different.
@@ -103,18 +83,15 @@
     Sense of scale and competence. Should feel like an editorial portrait of the space.
   -->
 	<img
-		src="/images/garage-interior-wide.webp"
+		src="/images/pics/bay.webp"
 		alt="Mechbrif Auto garage interior"
-		class="reveal opacity-0 transition-all duration-1000 w-full h-[55vw] max-h-[700px] object-cover" />
+		class="w-full h-[55vw] max-h-[700px] object-cover object-center" />
 </section>
 
 <!-- ─── VALUES ────────────────────────────────────────────────────────────── -->
 <section class="bg-[#141414] content-grid py-24 md:py-36 px-8 md:px-16">
 	<div class="">
 		<div class="mb-16">
-			<p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-4">
-				What Drives Us
-			</p>
 			<h2
 				class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.9] text-[clamp(2.5rem,5vw,4.5rem)]">
 				Our Principles.
@@ -143,12 +120,8 @@
 <section class="content-grid py-24 md:py-36 px-8 md:px-16">
 	<div class="">
 		<div
-			class="reveal opacity-0 translate-y-8 transition-all duration-700 grid md:grid-cols-2 gap-16 items-start">
+			class="grid md:grid-cols-2 gap-16 items-start">
 			<div>
-				<p
-					class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-4">
-					Find Us
-				</p>
 				<h2
 					class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.9] text-[clamp(2.5rem,5vw,4.5rem)] mb-10">
 					Where<br />We Are<span class="text-red-600">.</span>
