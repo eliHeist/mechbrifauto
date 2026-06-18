@@ -27,26 +27,27 @@
             })
         }
 
-        // Smooth scroll
         ScrollSmoother.create({
             smooth: 2,
             effects: true,
-        });
+        })
     })
-
 </script>
 <!-- Custom cursor -->
 <div id="cursor" class="cursor-ring hidden md:block"></div>
 <div id="cursor-dot" class="cursor-dot hidden md:block"></div>
 
 <Header />
-
-<!-- Page content -->
-<main class="content-grid bg-[#0D0D0D] min-h-screen">
-	{@render children()}
-</main>
-
-<Footer />
+<div id="smooth-wrapper">
+    <div id="smooth-content">
+        <!-- Page content -->
+        <main class="content-grid bg-[#0D0D0D] min-h-screen">
+            {@render children()}
+        </main>
+        
+        <Footer />
+    </div>
+</div>
 
 <style>
     .cursor-ring {
