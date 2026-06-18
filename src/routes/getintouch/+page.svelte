@@ -16,43 +16,33 @@
 
 	const servicesObjects = $state([
 		{
-            "id": 1,
+            "id": "diagnostics",
             "name": "Computerized Diagnosis"
         },
         {
-            "id": 2,
+            "id": "engine",
             "name": "Engine Services"
         },
         {
-            "id": 3,
+            "id": "suspension",
             "name": "Suspension & Steering"
         },
         {
-            "id": 4,
-            "name": "General Maintenance"
+            "id": "maintenance",
+            "name": "General Repair & Maintenance"
         },
         {
-            "id": 5,
+            "id": "rescue",
             "name": "Road Rescue"
         },
         {
-            "id": 6,
-            "name": "Vehicle Restoration"
+            "id": "panel-beating",
+            "name": "Panel Beating / Spray Painting"
         },
         {
-            "id": 7,
+            "id": "checkup",
             "name": "Not Sure - Run a Diagnosis"
         }
-	])
-
-	const services = $state([
-		"Computerized Diagnosis",
-		"Engine Services",
-		"Suspension & Steering",
-		"General Maintenance",
-		"Road Rescue",
-		"Vehicle Restoration",
-		"Not Sure — Run a Diagnosis",
 	])
 
 	const hours = $state([
@@ -77,6 +67,24 @@
 		submitted = false
 		serviceMode = "garage"
 	}
+
+    async function preFillFromQuery() {
+        const params = new URLSearchParams(window.location.search)
+        const serviceQuery = params.get("service")
+        if (serviceQuery && servicesObjects.some(s => s.id === serviceQuery)) {
+            service = serviceQuery
+            let serviceField = document.querySelector("#service") as HTMLSelectElement
+            let formWrapper = document.querySelector("#form-wrap") as HTMLElement
+            if (serviceField) {
+                serviceField.value = serviceQuery
+                formWrapper.scrollIntoView({ behavior: "smooth", block: "start" })
+            }
+        }
+    }
+    
+    $effect(() => {
+        preFillFromQuery()
+    })
 
     // useGsap(() => {
 	// 	const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -233,7 +241,7 @@
 <section class="pb-32 pt-16 md:pt-20">
 	<div
 		class="grid md:grid-cols-[1fr_380px] lg:grid-cols-[1fr_420px] gap-16 md:gap-20 items-start">
-		<div>
+		<div id="form-wrap">
 			{#if submitted}
 				<!-- ── SUCCESS STATE ─────────────────────────────────────────────── -->
 				<div class="success-state pt-4">
