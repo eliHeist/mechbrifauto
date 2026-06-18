@@ -29,7 +29,7 @@
 			</h2>
 			<div class="flex flex-col sm:flex-row gap-4 shrink-0">
 				<a
-					href="/contact"
+					href="/getintouch"
 					class="font-['Inter'] font-600 text-sm tracking-widest uppercase bg-red-600 text-white px-10 py-4 hover:bg-red-700 transition-colors text-center">
 					Book a Service
 				</a>

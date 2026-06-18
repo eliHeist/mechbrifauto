@@ -60,9 +60,9 @@
                 {/each}
             </div>
 			<a
-				href="/contact"
+				href="/getintouch"
 				class="font-['Inter'] font-600 text-xs tracking-widest uppercase transition-all duration-500 
-                {currentPath === '/contact' ? 'bg-red-700 text-white' : 'bg-red-600 text-white hover:bg-red-700'}
+                {currentPath === '/getintouch' ? 'bg-red-700 text-white' : 'bg-red-600 text-white hover:bg-red-700'}
                 {scrolledDown ? 'py-2 px-4' : 'py-3 px-6'}">
 				Book Now
 			</a>

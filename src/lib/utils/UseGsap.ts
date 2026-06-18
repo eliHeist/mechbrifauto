@@ -8,15 +8,17 @@ async function loadGsap() {
         gsapPromise = (async () => {
             const gsapModule = await import("gsap");
             const ScrollTriggerModule = await import("gsap/dist/ScrollTrigger");
+            const ScrollSmootherModule = await import("gsap/dist/ScrollSmoother");
             const SplitTextModule = await import("gsap/dist/SplitText");
             
             const gsap = gsapModule.default;
             const ScrollTrigger = ScrollTriggerModule.default;
+            const ScrollSmoother = ScrollSmootherModule.default;
             const SplitText = SplitTextModule.default;
             
-            gsap.registerPlugin(ScrollTrigger, SplitText);
+            gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
             
-            return { gsap, ScrollTrigger, SplitText };
+            return { gsap, ScrollTrigger, ScrollSmoother, SplitText };
         })();
     }
     return gsapPromise;
@@ -28,8 +30,9 @@ export async function useGsap(setup: () => (() => void) | void) {
     onMount(async () => {
         await loadGsap(); // Just ensure GSAP is loaded
         cleanup = setup();
-        const { ScrollTrigger } = await loadGsap();
+        const { ScrollTrigger, ScrollSmoother } = await loadGsap();
         ScrollTrigger.refresh();
+        ScrollSmoother.refresh();
     });
 
     onDestroy(() => {
