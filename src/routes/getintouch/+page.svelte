@@ -380,12 +380,11 @@
 						<div
 							class="field-line absolute bottom-0 left-0 right-0 h-px bg-white/10 origin-left">
 						</div>
-						<label
-							class="block font-['Inter'] text-sm font-600 uppercase
-                          text-white/35 mb-3 mt-2">
+						<label class="block font-['Inter'] text-sm font-600 uppercase text-white/35 mb-3 mt-2" for="name">
 							Your Name <span class="text-red-600">*</span>
 						</label>
 						<input
+                            id="name"
 							bind:value={name}
 							type="text"
 							placeholder="Full name"
@@ -398,77 +397,62 @@
 						<div
 							class="field-line absolute bottom-0 left-0 right-0 h-px bg-white/10 origin-left">
 						</div>
-						<label
-							class="block font-['Inter'] text-sm font-600 uppercase
-                          text-white/35 mb-3">
+						<label class="block font-['Inter'] text-sm font-600 uppercase text-white/35 mb-3" for="phone">
 							Phone / WhatsApp <span class="text-red-600">*</span>
 						</label>
 						<input
+							id="phone"
 							bind:value={phone}
 							type="tel"
 							placeholder="+256 7XX XXX XXX"
 							autocomplete="tel"
-							class="w-full bg-transparent pb-4 font-['Barlow_Condensed'] font-700 uppercase text-white
-                     text-[clamp(1.6rem,3.5vw,2.5rem)] leading-tight placeholder-white/15 outline-none
-                     focus-field-input" />
+							class="w-full bg-transparent pb-4 font-['Barlow_Condensed'] font-700 uppercase text-white text-[clamp(1.6rem,3.5vw,2.5rem)] leading-tight placeholder-white/15 outline-none focus-field-input" />
 					</div>
 
 					<!-- Email -->
 					<div class="form-field relative pb-0 mt-6">
-						<div
-							class="field-line absolute bottom-0 left-0 right-0 h-px bg-white/10 origin-left">
+						<div class="field-line absolute bottom-0 left-0 right-0 h-px bg-white/10 origin-left">
 						</div>
-						<label
-							class="block font-['Inter'] text-sm font-600 uppercase
-                          text-white/35 mb-3">
-							Email <span
-								class="text-white/20 normal-case tracking-normal text-sm"
-								>optional</span>
+						<label class="block font-['Inter'] text-sm font-600 uppercase
+                          text-white/35 mb-3" for="email">
+							Email <span class="text-white/20 normal-case tracking-normal text-sm">optional</span>
 						</label>
 						<input
+							id="email"
 							bind:value={email}
 							type="email"
 							placeholder="your@email.com"
 							autocomplete="email"
-							class="w-full bg-transparent pb-4 font-['Inter'] font-400 text-white text-xl
-                     placeholder-white/15 outline-none focus-field-input" />
+							class="w-full bg-transparent pb-4 font-['Inter'] font-400 text-white text-xl placeholder-white/15 outline-none focus-field-input" />
 					</div>
 
 					<!-- Vehicle -->
 					<div class="form-field relative pb-0 mt-6">
-						<div
-							class="field-line absolute bottom-0 left-0 right-0 h-px bg-white/10 origin-left">
+						<div class="field-line absolute bottom-0 left-0 right-0 h-px bg-white/10 origin-left">
 						</div>
-						<label
-							class="block font-['Inter'] text-sm font-600 uppercase
-                          text-white/35 mb-3">
-							Vehicle Make & Model <span
-								class="text-white/20 normal-case tracking-normal text-sm"
-								>optional</span>
+						<label class="block font-['Inter'] text-sm font-600 uppercase text-white/35 mb-3" for="vehicle">
+							Vehicle Make & Model <span class="text-white/20 normal-case tracking-normal text-sm">optional</span>
 						</label>
 						<input
+							id="vehicle"
 							bind:value={vehicle}
 							type="text"
 							placeholder="e.g. Toyota Land Cruiser 2018"
-							class="w-full bg-transparent pb-4 font-['Inter'] font-400 text-white text-xl
-                     placeholder-white/15 outline-none focus-field-input" />
+							class="w-full bg-transparent pb-4 font-['Inter'] font-400 text-white text-xl placeholder-white/15 outline-none focus-field-input" />
 					</div>
 
 					<!-- Service select — custom styled -->
 					<div class="form-field mt-6">
-						<div class="field-line h-px bg-white/10 origin-left"></div>
-						<label
-							class="block font-['Inter'] text-sm font-600 uppercase
-                          text-white/35 mb-3 mt-6">
+						<label class="block font-['Inter'] text-sm font-600 uppercase
+                          text-white/35 mb-3 mt-6" for="service">
 							Service Needed <span class="text-red-600">*</span>
 						</label>
 						<!-- Custom select wrapper -->
 						<div class="relative pb-4">
 							<select
+                                id="service"
 								bind:value={service}
-								class="w-full bg-transparent font-['Barlow_Condensed'] font-700 uppercase text-white
-                       text-[clamp(1.4rem,3vw,2.2rem)] outline-none cursor-pointer appearance-none
-                       focus-field-input pr-10">
+								class="w-full bg-transparent font-['Barlow_Condensed'] font-700 uppercase text-white text-[clamp(1.4rem,3vw,2.2rem)] outline-none cursor-pointer appearance-none focus-field-input pr-10">
 								<option
 									value=""
 									disabled
@@ -501,20 +485,17 @@
 
 					<!-- Message -->
 					<div class="form-field relative pb-0 mt-6">
-						<div
-							class="field-line absolute bottom-0 left-0 right-0 h-px bg-white/10 origin-left">
+						<div class="field-line absolute bottom-0 left-0 right-0 h-px bg-white/10 origin-left">
 						</div>
-						<label
-							class="block font-['Inter'] text-sm font-600 uppercase
-                          text-white/35 mb-3">
+						<label class="block font-['Inter'] text-sm font-600 uppercase text-white/35 mb-3" for="message">
 							Additional Details
 						</label>
 						<textarea
+                            id="message"
 							bind:value={message}
 							rows="4"
 							placeholder="Describe the issue, symptoms, or anything useful…"
-							class="w-full bg-transparent pb-4 font-['Inter'] font-300 text-white text-base md:text-lg
-                     placeholder-white/15 outline-none resize-none leading-relaxed focus-field-input">
+							class="w-full bg-transparent pb-4 font-['Inter'] font-300 text-white text-base md:text-lg placeholder-white/15 outline-none resize-none leading-relaxed focus-field-input">
 						</textarea>
 					</div>
 
@@ -571,16 +552,16 @@
 			<!-- Quick links block -->
 			<div class="sidebar-block bg-[#141414] border border-white/10 relative overflow-hidden">
 				<!-- Red top-left corner accent -->
-				<div class="absolute top-0 left-0 w-10 h-[2px] bg-red-600"></div>
-				<div class="absolute top-0 left-0 w-[2px] h-10 bg-red-600"></div>
+				<div class="absolute top-0 left-0 w-10 h-0.5 bg-red-600"></div>
+				<div class="absolute top-0 left-0 w-0.5 h-10 bg-red-600"></div>
 
 				<div class="p-8 md:p-10">
 					<p
-						class="font-['Inter'] text-sm font-600 tracking-[0.4em] uppercase text-red-600 mb-8">
+						class="font-['Inter'] text-sm font-600 uppercase text-red-600 mb-8">
 						Prefer Direct Contact?
 					</p>
 
-					<div class="space-y-0 divide-y divide-white/[0.06]">
+					<div class="space-y-0 divide-y divide-white/6">
 						<a
 							href="https://wa.me/256759158049"
 							target="_blank"
@@ -726,7 +707,7 @@
 			<!-- Hours block -->
 			<div class="sidebar-block border border-white/10 border-t-0 p-8 md:p-10 bg-[#141414]">
 				<p
-					class="font-['Inter'] text-sm font-600 tracking-[0.4em] uppercase text-white/30 mb-7">
+					class="font-['Inter'] text-sm font-600 uppercase text-white/30 mb-7">
 					Opening Hours
 				</p>
 				<div class="space-y-0 divide-y divide-white/[0.06]">
@@ -746,7 +727,7 @@
 			<!-- Location block -->
 			<div class="sidebar-block border border-white/10 border-t-0 p-8 md:p-10 bg-[#141414]">
 				<p
-					class="font-['Inter'] text-sm font-600 tracking-[0.4em] uppercase text-white/30 mb-5">
+					class="font-['Inter'] text-sm font-600 uppercase text-white/30 mb-5">
 					Garage Location
 				</p>
 				<p
@@ -758,7 +739,7 @@
 					target="_blank"
 					rel="noopener"
 					class="inline-flex items-center gap-2 font-['Inter'] font-600 text-sm
-                  tracking-[0.3em] uppercase text-red-600 hover:text-red-400 transition-colors group">
+                  uppercase text-red-600 hover:text-red-400 transition-colors group">
 					Open in Maps
 					<span class="group-hover:translate-x-1 transition-transform duration-200"
 						>→</span>
