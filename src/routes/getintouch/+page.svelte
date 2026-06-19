@@ -13,6 +13,7 @@
 	let message = $state("")
 	let submitted = $state(false)
 	let submitting = $state(false)
+	let submitError  = $state('')
 
 	const servicesObjects = $state([
 		{
@@ -56,6 +57,39 @@
 	async function handleSubmit() {
 		if (!canSubmit || submitting) return
 		submitting = true
+        let chosenService = servicesObjects.find((obj) => {
+            return obj.id == service
+        })
+        let object = { 
+            name, 
+            phone, 
+            email, 
+            vehicle, 
+            serviceMode, 
+            service: chosenService?.name, 
+            message, 
+        }
+
+        try {
+            const res = await fetch('/api/contact/', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(object)
+            })
+            
+            const data = await res.json();
+
+            if (!res.ok || !data.success) {
+                submitError = data.error ?? 'Something went wrong. Please try again or WhatsApp us directly.';
+                return;
+            }
+        
+            submitted = true;
+        } catch (error) {
+            submitError = 'Internal Error. Please try again later.';
+        } finally {
+            submitting = false
+        }
 		// Replace with real endpoint / SvelteKit form action
 		await new Promise((r) => setTimeout(r, 1400))
 		submitting = false
