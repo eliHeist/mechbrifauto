@@ -14,7 +14,7 @@
 			alt="Mechbrif Auto garage bay"
 			class="w-full h-full object-cover" />
 		<div
-			class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent">
+			class="absolute inset-0 bg-linear-to-r from-black via-black/60 to-transparent">
 		</div>
 	</div>
 	<div class="relative z-10 content-grid px-8 md:px-16 py-28 md:py-40">
