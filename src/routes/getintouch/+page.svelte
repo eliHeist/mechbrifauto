@@ -239,15 +239,15 @@
 			src="/images/pics/ben.webp"
 			alt="Mechbrif Auto mechanic"
 			class="w-full h-full object-cover object-center" />
-		<div class="absolute inset-0 bg-linear-to-r from-transparent to-[#0D0D0D]/60"></div>
+		<div class="absolute inset-0 bg-linear-to-r from-transparent to-black/60"></div>
 		<!-- Red corner frame accent -->
 		<div class="absolute top-0 left-0 w-20 h-20">
-			<div class="absolute top-0 left-0 w-full h-0.5 bg-red-600"></div>
-			<div class="absolute top-0 left-0 w-0.5 h-full bg-red-600"></div>
+			<div class="absolute top-0 left-0 w-full h-0.5 bg-accent"></div>
+			<div class="absolute top-0 left-0 w-0.5 h-full bg-accent"></div>
 		</div>
 		<div class="absolute bottom-0 right-0 w-20 h-20">
-			<div class="absolute bottom-0 right-0 w-full h-0.5 bg-red-600"></div>
-			<div class="absolute bottom-0 right-0 w-0.5 h-full bg-red-600"></div>
+			<div class="absolute bottom-0 right-0 w-full h-0.5 bg-accent"></div>
+			<div class="absolute bottom-0 right-0 w-0.5 h-full bg-accent"></div>
 		</div>
 	</div>
 
@@ -258,7 +258,7 @@
 				><span class="hero-line block text-[clamp(4.5rem,10vw,9rem)]">Book a</span></span>
 			<span class="hero-line-wrap block overflow-hidden"
 				><span class="hero-line block text-[clamp(4.5rem,10vw,9rem)]"
-					>Mechanic<span class="text-red-600">.</span></span
+					>Mechanic<span class="text-accent">.</span></span
 				></span>
 		</h1>
 		<p
@@ -280,7 +280,7 @@
 				<!-- ── SUCCESS STATE ─────────────────────────────────────────────── -->
 				<div class="success-state pt-4">
 					<div
-						class="mb-10 inline-flex items-center justify-center w-16 h-16 border border-red-600 relative">
+						class="mb-10 inline-flex items-center justify-center w-16 h-16 border border-accent relative">
 						<!-- Animated checkmark box -->
 						<svg width="26" height="26" viewBox="0 0 26 26" fill="none">
 							<path
@@ -292,12 +292,12 @@
 								stroke-dasharray="30"
 								stroke-dashoffset="0"></path>
 						</svg>
-						<div class="absolute -top-px -left-px w-4 h-[2px] bg-[#0D0D0D]"></div>
-						<div class="absolute -bottom-px -right-px w-4 h-[2px] bg-[#0D0D0D]"></div>
+						<div class="absolute -top-px -left-px w-4 h-[2px] bg-black"></div>
+						<div class="absolute -bottom-px -right-px w-4 h-[2px] bg-black"></div>
 					</div>
 
 					<p
-						class="font-['Inter'] text-sm font-600 tracking-[0.4em] uppercase text-red-600 mb-5">
+						class="font-['Inter'] text-sm font-600 tracking-[0.4em] uppercase text-accent mb-5">
 						Booking Received
 					</p>
 					<h2
@@ -321,7 +321,7 @@
 							href="https://wa.me/256759158049"
 							target="_blank"
 							rel="noopener"
-							class="font-['Inter'] font-600 text-xs tracking-[0.25em] uppercase bg-red-600 text-white
+							class="font-['Inter'] font-600 text-xs tracking-[0.25em] uppercase bg-accent text-white
                       px-10 py-4 hover:bg-red-700 transition-colors text-center">
 							WhatsApp Us Now
 						</a>
@@ -341,16 +341,16 @@
 							onclick={() => (serviceMode = "garage")}
 							class="mode-card relative text-left p-6 border transition-all duration-300 group flex gap-6 items-center
                      {serviceMode === 'garage'
-								? 'border-red-600 bg-red-600/5'
-								: 'border-white/10 bg-[#141414] hover:border-white/25'}">
+								? 'border-accent bg-accent/5'
+								: 'border-white/10 bg-dark hover:border-white/25'}">
 							<!-- Active indicator -->
 							<div
-								class="absolute bottom-0 left-0 h-[2px] bg-red-600 transition-all duration-300
+								class="absolute bottom-0 left-0 h-[2px] bg-accent transition-all duration-300
                           {serviceMode === 'garage' ? 'w-full' : 'w-0'}">
 							</div>
 							<svg
 								class="mb-4 {serviceMode === 'garage'
-									? 'text-red-600'
+									? 'text-accent'
 									: 'text-white/30'} transition-colors"
 								width="24"
 								height="24"
@@ -379,15 +379,15 @@
 							onclick={() => (serviceMode = "onsite")}
 							class="mode-card relative text-left p-6 border transition-all duration-300 group flex gap-6 items-center
                      {serviceMode === 'onsite'
-								? 'border-red-600 bg-red-600/5'
-								: 'border-white/10 bg-[#141414] hover:border-white/25'}">
+								? 'border-accent bg-accent/5'
+								: 'border-white/10 bg-dark hover:border-white/25'}">
 							<div
-								class="absolute bottom-0 left-0 h-[2px] bg-red-600 transition-all duration-300
+								class="absolute bottom-0 left-0 h-[2px] bg-accent transition-all duration-300
                           {serviceMode === 'onsite' ? 'w-full' : 'w-0'}">
 							</div>
 							<svg
 								class="mb-4 {serviceMode === 'onsite'
-									? 'text-red-600'
+									? 'text-accent'
 									: 'text-white/30'} transition-colors"
 								width="24"
 								height="24"
@@ -416,14 +416,14 @@
 				</div>
 
 				<!-- Form fields -->
-				<div class="space-y-0">
+				<div class="space-y-0 relative">
 					<!-- Name -->
 					<div class="form-field relative pb-0">
 						<div
 							class="field-line absolute bottom-0 left-0 right-0 h-px bg-white/10 origin-left">
 						</div>
 						<label class="block font-['Inter'] text-sm font-600 uppercase text-white/35 mb-3 mt-2" for="name">
-							Your Name <span class="text-red-600">*</span>
+							Your Name <span class="text-accent">*</span>
 						</label>
 						<input
                             id="name"
@@ -440,7 +440,7 @@
 							class="field-line absolute bottom-0 left-0 right-0 h-px bg-white/10 origin-left">
 						</div>
 						<label class="block font-['Inter'] text-sm font-600 uppercase text-white/35 mb-3" for="phone">
-							Phone / WhatsApp <span class="text-red-600">*</span>
+							Phone / WhatsApp <span class="text-accent">*</span>
 						</label>
 						<input
 							id="phone"
@@ -487,7 +487,7 @@
 					<div class="form-field mt-6">
 						<label class="block font-['Inter'] text-sm font-600 uppercase
                           text-white/35 mb-3 mt-6" for="service">
-							Service Needed <span class="text-red-600">*</span>
+							Service Needed <span class="text-accent">*</span>
 						</label>
 						<!-- Custom select wrapper -->
 						<div class="relative pb-4">
@@ -498,20 +498,20 @@
 								<option
 									value=""
 									disabled
-									class="bg-[#141414] text-sm normal-case font-normal">
+									class="bg-dark text-sm normal-case font-normal">
 									Select a service
 								</option>
 								{#each servicesObjects as s}
 									<option
 										value={s.id}
-										class="bg-[#141414] text-base normal-case font-normal"
+										class="bg-dark text-base normal-case font-normal"
 										>{s.name}</option>
 								{/each}
 							</select>
 							<!-- Custom chevron -->
 							<div
 								class="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none
-                          {service ? 'text-red-600' : 'text-white/25'}">
+                          {service ? 'text-accent' : 'text-white/25'}">
 								<svg width="18" height="18" viewBox="0 0 18 18" fill="none">
 									<path
 										d="M4 6l5 5 5-5"
@@ -542,7 +542,7 @@
 					</div>
 
 					<!-- Submit -->
-					<div class="mt-12 flex flex-col sm:flex-row gap-6 items-start {canSubmit ? 'sticky bottom-16 bg-[#141414]' : ''}">
+					<div class="mt-12 flex flex-col sm:flex-row gap-6 items-start {canSubmit ? 'sticky bottom-16 bg-dark' : ''}">
 						<div class="relative">
 							<button
 								id="submit-btn"
@@ -555,7 +555,7 @@
 									? 'bg-white/8 text-white/25 cursor-not-allowed'
 									: submitting
 										? 'bg-red-700 text-white cursor-wait'
-										: 'bg-red-600 text-white'}">
+										: 'bg-accent text-white'}">
 								<!-- Hover sweep fill (GSAP) -->
 								{#if canSubmit && !submitting}
 									<span
@@ -592,14 +592,14 @@
     ════════════════════════════════════════════════════════════════════════ -->
 		<div class="md:sticky md:top-28 space-y-0">
 			<!-- Quick links block -->
-			<div class="sidebar-block bg-[#141414] border border-white/10 relative overflow-hidden">
+			<div class="sidebar-block bg-dark border border-white/10 relative overflow-hidden">
 				<!-- Red top-left corner accent -->
-				<div class="absolute top-0 left-0 w-10 h-0.5 bg-red-600"></div>
-				<div class="absolute top-0 left-0 w-0.5 h-10 bg-red-600"></div>
+				<div class="absolute top-0 left-0 w-10 h-0.5 bg-accent"></div>
+				<div class="absolute top-0 left-0 w-0.5 h-10 bg-accent"></div>
 
 				<div class="p-8 md:p-10">
 					<p
-						class="font-['Inter'] text-sm font-600 uppercase text-red-600 mb-8">
+						class="font-['Inter'] text-sm font-600 uppercase text-accent mb-8">
 						Prefer Direct Contact?
 					</p>
 
@@ -611,13 +611,13 @@
 							class="group flex items-center gap-5 py-6 hover:pl-2 transition-all duration-200">
 							<div
 								class="w-10 h-10 border border-white/10 flex items-center justify-center
-                          shrink-0 group-hover:border-red-600 transition-colors duration-200">
+                          shrink-0 group-hover:border-accent transition-colors duration-200">
 								<svg
 									width="17"
 									height="17"
 									viewBox="0 0 24 24"
 									fill="currentColor"
-									class="text-white/40 group-hover:text-red-600 transition-colors duration-200">
+									class="text-white/40 group-hover:text-accent transition-colors duration-200">
 									<path
 										d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
 									></path>
@@ -634,7 +634,7 @@
 								</div>
 							</div>
 							<svg
-								class="text-white/20 group-hover:text-red-600 group-hover:translate-x-1
+								class="text-white/20 group-hover:text-accent group-hover:translate-x-1
                           transition-all duration-200 shrink-0"
 								width="16"
 								height="16"
@@ -654,7 +654,7 @@
 							class="group flex items-center gap-5 py-6 hover:pl-2 transition-all duration-200">
 							<div
 								class="w-10 h-10 border border-white/10 flex items-center justify-center
-                          shrink-0 group-hover:border-red-600 transition-colors duration-200">
+                          shrink-0 group-hover:border-accent transition-colors duration-200">
 								<svg
 									width="17"
 									height="17"
@@ -664,7 +664,7 @@
 									stroke-width="1.8"
 									stroke-linecap="round"
 									stroke-linejoin="round"
-									class="text-white/40 group-hover:text-red-600 transition-colors duration-200">
+									class="text-white/40 group-hover:text-accent transition-colors duration-200">
 									<path
 										d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.5 2.88 2 2 0 012.5 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.36-.36a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
 									></path>
@@ -681,7 +681,7 @@
 								</div>
 							</div>
 							<svg
-								class="text-white/20 group-hover:text-red-600 group-hover:translate-x-1
+								class="text-white/20 group-hover:text-accent group-hover:translate-x-1
                           transition-all duration-200 shrink-0"
 								width="16"
 								height="16"
@@ -701,7 +701,7 @@
 							class="group flex items-center gap-5 py-6 hover:pl-2 transition-all duration-200">
 							<div
 								class="w-10 h-10 border border-white/10 flex items-center justify-center
-                          shrink-0 group-hover:border-red-600 transition-colors duration-200">
+                          shrink-0 group-hover:border-accent transition-colors duration-200">
 								<svg
 									width="17"
 									height="17"
@@ -711,7 +711,7 @@
 									stroke-width="1.8"
 									stroke-linecap="round"
 									stroke-linejoin="round"
-									class="text-white/40 group-hover:text-red-600 transition-colors duration-200">
+									class="text-white/40 group-hover:text-accent transition-colors duration-200">
 									<path
 										d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
 									></path>
@@ -728,7 +728,7 @@
 								</div>
 							</div>
 							<svg
-								class="text-white/20 group-hover:text-red-600 group-hover:translate-x-1
+								class="text-white/20 group-hover:text-accent group-hover:translate-x-1
                           transition-all duration-200 shrink-0 flex-shrink-0"
 								width="16"
 								height="16"
@@ -747,7 +747,7 @@
 			</div>
 
 			<!-- Hours block -->
-			<div class="sidebar-block border border-white/10 border-t-0 p-8 md:p-10 bg-[#141414]">
+			<div class="sidebar-block border border-white/10 border-t-0 p-8 md:p-10 bg-dark">
 				<p
 					class="font-['Inter'] text-sm font-600 uppercase text-white/30 mb-7">
 					Opening Hours
@@ -767,7 +767,7 @@
 			</div>
 
 			<!-- Location block -->
-			<div class="sidebar-block border border-white/10 border-t-0 p-8 md:p-10 bg-[#141414]">
+			<div class="sidebar-block border border-white/10 border-t-0 p-8 md:p-10 bg-dark">
 				<p
 					class="font-['Inter'] text-sm font-600 uppercase text-white/30 mb-5">
 					Garage Location
@@ -781,7 +781,7 @@
 					target="_blank"
 					rel="noopener"
 					class="inline-flex items-center gap-2 font-['Inter'] font-600 text-sm
-                  uppercase text-red-600 hover:text-red-400 transition-colors group">
+                  uppercase text-accent hover:text-red-400 transition-colors group">
 					Open in Maps
 					<span class="group-hover:translate-x-1 transition-transform duration-200"
 						>→</span>
@@ -790,7 +790,7 @@
 
 			<!-- Response time badge -->
 			<div
-				class="sidebar-block border border-white/10 border-t-0 p-8 md:p-10 bg-[#0D0D0D]
+				class="sidebar-block border border-white/10 border-t-0 p-8 md:p-10 bg-black
                   flex items-center gap-5">
 				<div class="w-2 h-2 rounded-full bg-green-500 shrink-0 animate-pulse"></div>
 				<p class="font-['Inter'] text-sm text-white/40 leading-relaxed">
@@ -803,7 +803,7 @@
 </section>
 
 <div
-	class="full-width bg-[#141414] border-t border-white/10 py-5 overflow-hidden select-none"
+	class="full-width bg-dark border-t border-white/10 py-5 overflow-hidden select-none"
 	aria-hidden="true">
 	<div id="contact-ticker" class="flex whitespace-nowrap">
 		{#each Array(2) as _}

@@ -17,7 +17,7 @@
 
 	<!-- Hero text -->
 	<div class="relative z-10 text-center grid justify-items-center content-end pb-20">
-		<!-- <p class="font-['Inter'] text-xs font-600 tracking-[0.15em] text-red-600 uppercase mb-6">
+		<!-- <p class="font-['Inter'] text-xs font-600 tracking-[0.15em] text-accent uppercase mb-6">
 			Kampala's Tech-Forward Garage
 		</p> -->
 		<h1 class="font-['Barlow_Condensed'] font-900 uppercase leading-[0.88] text-white text-[clamp(4rem,12vw,8rem)] flex gap-6 flex-wrap justify-center">
@@ -25,8 +25,8 @@
 			<div class="">Car</div>
 			<div class="">Deserves</div>
 			<div class="flex gap-1">
-                <span class="underline decoration-red-600">Surety</span> 
-                <span class="rounded-full grid place-content-center bg-red-600 aspect-square size-8">
+                <span class="underline decoration-accent">Surety</span> 
+                <span class="rounded-full grid place-content-center bg-accent aspect-square size-8">
                     <Check class="size-6 text-white" />
                 </span>
             </div>
@@ -34,7 +34,7 @@
 		<div class="mt-10 flex flex-col sm:flex-row gap-4 items-start">
 			<a
 				href="/contact"
-				class="font-['Inter'] font-600 text-sm tracking-widest uppercase bg-red-600 text-white px-10 py-4 hover:bg-red-700 transition-colors">
+				class="font-['Inter'] font-600 text-sm tracking-widest uppercase bg-accent text-white px-10 py-4 hover:bg-red-700 transition-colors">
 				Book a service
 			</a>
 			<a

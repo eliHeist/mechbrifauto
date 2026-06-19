@@ -35,3 +35,10 @@
 		grid-column: full-width;
 	}
 }
+
+@theme {
+    --color-accent: #ea1e25;
+    --color-black: #0D0D0D;
+    --color-dark: #141414;
+    --color-white: #f2edeb;
+}

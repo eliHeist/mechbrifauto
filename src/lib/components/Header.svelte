@@ -48,7 +48,7 @@
 		<!-- Desktop nav -->
 		<nav class="hidden md:flex items-center gap-4">
             <div class="md:flex items-center border border-transparent transition-all duration-300 
-            {scrolled ? 'bg-[#0D0D0D]/10 backdrop-blur-sm border-white/10' : 'bg-transparent'}
+            {scrolled ? 'bg-black/10 backdrop-blur-sm border-white/10' : 'bg-transparent'}
             {scrolledDown ? 'gap-4 py-2 px-4' : 'gap-10 py-3 px-6'}">
                 {#each navLinks as link}
                     <a
@@ -62,7 +62,7 @@
 			<a
 				href="/getintouch"
 				class="font-['Inter'] font-600 text-xs tracking-widest uppercase transition-all duration-500 
-                {currentPath === '/getintouch' ? 'bg-red-700 text-white' : 'bg-red-600 text-white hover:bg-red-700'}
+                {currentPath === '/getintouch' ? 'bg-red-700 text-white' : 'bg-accent text-white hover:bg-red-700'}
                 {scrolledDown ? 'py-2 px-4' : 'py-3 px-6'}">
 				Book Now
 			</a>
@@ -92,7 +92,7 @@
 <!-- Mobile menu overlay -->
 {#if menuOpen}
 	<div
-		class="fixed inset-0 z-40 bg-[#0D0D0D] flex flex-col justify-center px-8"
+		class="fixed inset-0 z-40 bg-black flex flex-col justify-center px-8"
 		role="dialog"
 		aria-modal="true">
 		<nav class="space-y-2">
@@ -101,7 +101,7 @@
 					href={link.href}
 					onclick={closeMenu}
 					class="block font-['Barlow_Condensed'] font-900 uppercase text-[clamp(3rem,10vw,5rem)] leading-tight transition-colors
-            {currentPath === link.href ? 'text-red-600' : 'text-white/80 hover:text-white'}">
+            {currentPath === link.href ? 'text-accent' : 'text-white/80 hover:text-white'}">
 					{link.label}
 				</a>
 			{/each}
@@ -118,7 +118,7 @@
 					href="https://wa.me/256759158049"
 					target="_blank"
 					rel="noopener"
-					class="font-['Inter'] text-sm text-red-600 hover:text-red-400 transition-colors">
+					class="font-['Inter'] text-sm text-accent hover:text-red-400 transition-colors">
 					WhatsApp →
 				</a>
 			</div>

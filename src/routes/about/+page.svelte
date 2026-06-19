@@ -25,7 +25,7 @@
 </svelte:head>
 
 <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
-<section class="relative min-h-[80vh] bg-[#0D0D0D] flex items-end overflow-hidden">
+<section class="relative min-h-[80vh] bg-black flex items-end overflow-hidden">
 	<!--
     IMAGE: A full-bleed photo of the Mechbrif team — mechanics standing in the
     garage bay, arms folded or looking at camera. Confident, professional, approachable.
@@ -37,7 +37,7 @@
 			alt="Mechbrif Auto team"
 			class="w-full h-full object-cover object-top opacity-40" />
 		<div
-			class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/50 to-transparent">
+			class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
 		</div>
 	</div>
 	<div class="relative z-10 max-w-7xl mx-auto px-8 md:px-16 pb-24 pt-40">
@@ -53,7 +53,7 @@
 	<div class="grid md:grid-cols-2 gap-16 md:gap-28 items-start">
 		<div class="">
 			<h2 class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.9] text-[clamp(2.5rem,5vw,4rem)]">
-				Who We Are<span class="text-red-600">.</span>
+				Who We Are<span class="text-accent">.</span>
 			</h2>
 		</div>
 		<div class="space-y-6">
@@ -76,7 +76,7 @@
 </section>
 
 <!-- ─── LARGE IMAGE BREAK ─────────────────────────────────────────────────── -->
-<section class="bg-[#141414] full-width">
+<section class="bg-dark full-width">
 	<!--
     IMAGE: A wide panoramic shot of the interior of the Mechbrif garage —
     vehicles on lifts, lit tools on the workbench, mechanics visible in background.
@@ -89,7 +89,7 @@
 </section>
 
 <!-- ─── VALUES ────────────────────────────────────────────────────────────── -->
-<section class="bg-[#141414] content-grid py-24 md:py-36 px-8 md:px-16">
+<section class="bg-dark content-grid py-24 md:py-36 px-8 md:px-16">
 	<div class="">
 		<div class="mb-16">
 			<h2
@@ -101,8 +101,8 @@
 		<div class="grid md:grid-cols-2 gap-px bg-white/10">
 			{#each values as value, i}
 				<div
-					class="bg-[#141414] p-10 md:p-14">
-					<div class="w-8 h-px bg-red-600 mb-8"></div>
+					class="bg-dark p-10 md:p-14">
+					<div class="w-8 h-px bg-accent mb-8"></div>
 					<h3
 						class="font-['Barlow_Condensed'] font-800 uppercase text-white text-3xl leading-tight mb-4">
 						{value.title}
@@ -124,7 +124,7 @@
 			<div>
 				<h2
 					class="font-['Barlow_Condensed'] font-900 uppercase text-white leading-[0.9] text-[clamp(2.5rem,5vw,4.5rem)] mb-10">
-					Where<br />We Are<span class="text-red-600">.</span>
+					Where<br />We Are<span class="text-accent">.</span>
 				</h2>
 
 				<div class="gap-8 grid md:grid-cols-2">
@@ -156,15 +156,15 @@
 						<div class="space-y-1">
 							<a
 								href="tel:+256765219273"
-								class="block font-['Barlow_Condensed'] font-700 text-white uppercase text-2xl hover:text-red-600 transition-colors">
+								class="block font-['Barlow_Condensed'] font-700 text-white uppercase text-2xl hover:text-accent transition-colors">
 								+256 765 219 273
 							</a>
 							<a
 								href="https://wa.me/256759158049"
 								target="_blank"
 								rel="noopener"
-								class="block font-['Barlow_Condensed'] font-700 text-white uppercase text-2xl hover:text-red-600 transition-colors">
-								+256 759 158 049 <span class="text-red-600 text-lg"
+								class="block font-['Barlow_Condensed'] font-700 text-white uppercase text-2xl hover:text-accent transition-colors">
+								+256 759 158 049 <span class="text-accent text-lg"
 									>(WhatsApp)</span>
 							</a>
 						</div>
@@ -185,7 +185,7 @@
 
 			<!-- Map placeholder -->
 			<div
-				class="relative h-[400px] md:h-full min-h-[400px] bg-[#141414] border border-white/10 flex items-center justify-center">
+				class="relative h-[400px] md:h-full min-h-[400px] bg-dark border border-white/10 flex items-center justify-center">
 				<!--
           Embed a Google Maps iframe here for the actual location.
           Replace the src with the correct embed URL for Plot 7, Namugongo Kyaliwajjala.

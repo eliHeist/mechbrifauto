@@ -7,7 +7,7 @@
 	])
 </script>
 
-<section class="breakout bg-[#141414] border border-white/10">
+<section class="breakout bg-dark border border-white/10">
 	<div class="py-10 grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-white/10">
 		{#each stats as stat}
 			<div class="px-8 first:pl-0 text-center">

@@ -26,7 +26,7 @@
 <section class="content-grid py-28 md:py-40">
 	<div class="">
 		<div class="mb-20">
-			<!-- <p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-4">
+			<!-- <p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-accent uppercase mb-4">
 				The Process
 			</p> -->
 			<h2

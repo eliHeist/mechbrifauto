@@ -21,7 +21,7 @@
 <section class="content-grid py-28 md:py-40">
 	<div class="">
 		<div class="mb-16">
-			<!-- <p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-4">
+			<!-- <p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-accent uppercase mb-4">
 				Client Feedback
 			</p> -->
 			<h2
@@ -33,10 +33,10 @@
 		<div class="grid md:grid-cols-3 gap-px bg-white/10">
 			{#each testimonials as t, i}
 				<div
-					class="transition-all duration-700 bg-[#0D0D0D] p-10 flex flex-col">
+					class="transition-all duration-700 bg-black p-10 flex flex-col">
 					<div class="flex gap-1 mb-6">
 						{#each Array(5) as _}
-							<span class="text-red-600 text-xs">★</span>
+							<span class="text-accent text-xs">★</span>
 						{/each}
 					</div>
 					<p class="font-['Inter'] text-white/80 text-lg leading-relaxed mb-8 flex-1">

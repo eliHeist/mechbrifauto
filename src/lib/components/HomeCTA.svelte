@@ -2,7 +2,7 @@
 
 </script>
 
-<section class="full-width relative bg-[#141414] py-0 overflow-hidden">
+<section class="full-width relative bg-dark py-0 overflow-hidden">
 	<!--
     IMAGE: A wide-angle shot inside the Mechbrif garage bay — multiple cars visible,
     mechanics working, bright workshop lights overhead against the dark ceiling.
@@ -12,9 +12,9 @@
 		<img
 			src="/images/pics/right-techs-shot.webp"
 			alt="Mechbrif Auto garage bay"
-			class="w-full h-full object-cover opacity-20" />
+			class="w-full h-full object-cover" />
 		<div
-			class="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/10 to-transparent">
+			class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent">
 		</div>
 	</div>
 	<div class="relative z-10 content-grid px-8 md:px-16 py-28 md:py-40">
@@ -30,7 +30,7 @@
 			<div class="flex flex-col sm:flex-row gap-4">
 				<a
 					href="/contact"
-					class="font-['Inter'] font-600 text-sm tracking-widest uppercase bg-red-600 text-white px-10 py-4 hover:bg-red-700 transition-colors text-center">
+					class="font-['Inter'] font-600 text-sm tracking-widest uppercase bg-accent text-white px-10 py-4 hover:bg-red-700 transition-colors text-center">
 					Book On-Site Service
 				</a>
 				<a

@@ -5,7 +5,7 @@
 <section class="py-28 md:py-40 overflow-hidden">
 	<div class="">
 		<div class="">
-			<!-- <p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-red-600 uppercase mb-6">
+			<!-- <p class="font-['Inter'] text-xs font-600 tracking-[0.3em] text-accent uppercase mb-6">
 				What Sets Us Apart
 			</p> -->
 			<h2
@@ -28,14 +28,14 @@
 					alt="Autel computerized diagnostics"
 					class="w-full h-125 object-cover" />
 				<div
-					class="absolute top-6 left-6 bg-red-600 text-white font-['Inter'] text-xs font-600 tracking-widest uppercase px-4 py-2">
+					class="absolute top-6 left-6 bg-accent text-white font-['Inter'] text-xs font-600 tracking-widest uppercase px-4 py-2">
 					Autel-Powered
 				</div>
 			</div>
 
 			<!-- Right: copy -->
 			<div
-				class="bg-[#141414] p-10 md:p-16 flex flex-col justify-center">
+				class="bg-dark p-10 md:p-16 flex flex-col justify-center">
 				<p class="font-['Inter'] text-white/70 text-lg leading-relaxed">
 					We don't guess. We scan first.
 				</p>
@@ -50,7 +50,7 @@
 				</p>
 				<a
 					href="/services"
-					class="mt-10 self-start font-['Inter'] font-600 text-sm tracking-widest uppercase text-red-600 flex items-center gap-3 group">
+					class="mt-10 self-start font-['Inter'] font-600 text-sm tracking-widest uppercase text-accent flex items-center gap-3 group">
 					See All Services
 					<span class="inline-block transition-transform group-hover:translate-x-2"
 						>→</span>

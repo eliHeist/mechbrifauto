@@ -41,7 +41,7 @@
 <div id="smooth-wrapper">
     <div id="smooth-content">
         <!-- Page content -->
-        <main class="content-grid bg-[#0D0D0D] min-h-screen">
+        <main class="content-grid bg-black min-h-screen">
             {@render children()}
         </main>
         
